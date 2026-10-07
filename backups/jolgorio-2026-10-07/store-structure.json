@@ -1,0 +1,18 @@
+{
+ "shop": {"name": "Mi tienda 3", "brand": "Jolgorio", "domain": "pue1f9-he.myshopify.com", "plan": "Basic", "currency": "EUR", "country": "Spain"},
+ "collections": [
+  {"title": "Página de inicio", "handle": "frontpage", "type": "manual", "sortOrder": "BEST_SELLING", "note": "Contenía los 14 productos"},
+  {"title": "Halloween", "handle": "halloween", "type": "smart", "rules": "tag = halloween", "sortOrder": "BEST_SELLING"},
+  {"title": "Navidad", "handle": "navidad", "type": "smart", "rules": "tag = navidad", "sortOrder": "BEST_SELLING"},
+  {"title": "Cumpleaños", "handle": "cumpleanos", "type": "smart", "rules": "tag = cumpleanos", "sortOrder": "BEST_SELLING"},
+  {"title": "Iluminación", "handle": "iluminacion", "type": "smart", "rules": "tag = iluminacion", "sortOrder": "BEST_SELLING"},
+  {"title": "Decoración", "handle": "decoracion", "type": "smart", "rules": "tag = decoracion OR globos OR proyector OR guirnalda", "sortOrder": "BEST_SELLING"},
+  {"title": "Proyectores", "handle": "proyectores", "type": "smart", "rules": "tag = proyector", "sortOrder": "BEST_SELLING"},
+  {"title": "Guirnaldas", "handle": "guirnaldas", "type": "smart", "rules": "tag = guirnalda", "sortOrder": "BEST_SELLING"}
+ ],
+ "pages": [{"title": "Contacto", "handle": "contact", "body": "", "published": true}],
+ "menus": [
+  {"title": "Menú principal", "handle": "main-menu", "items": [["Inicio", "/"], ["Catálogo", "/collections/all"], ["Contacto", "/pages/contact"]]},
+  {"title": "Menú de pie de página", "handle": "footer", "items": [["Buscar", "/search"]]}
+ ]
+}
