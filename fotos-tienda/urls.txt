@@ -1,4 +1,4 @@
-chk_us.json https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos.js
+chk_us2.json https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos.js
 chk_es.json https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos.js
 chk_us_live.html https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos
 chk_cart_us.json https://ypnmwd-as.myshopify.com/en-us/cart.js
