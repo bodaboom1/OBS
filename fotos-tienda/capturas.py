@@ -1,11 +1,9 @@
 import asyncio
 from playwright.async_api import async_playwright
 B="https://ypnmwd-as.myshopify.com"
-T="preview_theme_id=207923544401"
+T="preview_theme_id=207924363601"
 PAGES={
  "home": B+"/?"+T,
- "fav": B+"/collections/mas-vendidos?"+T,
- "all": B+"/collections/all?"+T,
  "prod": B+"/products/lampara-proyectora-de-luna-usb-halloween-y-navidad?"+T,
 }
 async def shots(b,name,url,vw,vh,suf,n):
@@ -17,7 +15,7 @@ async def shots(b,name,url,vw,vh,suf,n):
         await pg.wait_for_timeout(4000)
         await pg.evaluate("document.querySelectorAll('#shopify-pc__banner, .shopify-pc__banner__dialog, #preview-bar-iframe, #PBarNextFrameWrapper').forEach(e=>e.remove())")
         h=await pg.evaluate("document.documentElement.scrollHeight")
-        open(f"fotos-tienda/capturas/{name}_{suf}.txt","w").write(f"height={h}\n"+await pg.inner_text("body"))
+        open(f"fotos-tienda/capturas/{name}_{suf}.txt","w").write(f"height={h}\n"+await pg.inner_text("body"));open(f"fotos-tienda/capturas/{name}_{suf}.html","w").write(await pg.content())
         i=0;y=0
         while y<h and i<n:
             await pg.evaluate(f"window.scrollTo(0,{y})"); await pg.wait_for_timeout(700)
@@ -31,6 +29,6 @@ async def main():
         b=await p.chromium.launch()
         for name,url in PAGES.items():
             await shots(b,name,url,390,844,"m",8)
-            await shots(b,name,url,1366,860,"d",6)
+            pass
         await b.close()
 asyncio.run(main())
