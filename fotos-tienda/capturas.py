@@ -8,7 +8,7 @@ async def main():
     def L(*a): log.write(" ".join(str(x) for x in a)+"\n"); log.flush()
     async with async_playwright() as p:
         b=await p.chromium.launch()
-        for cc in ["ES","FR","DE"]:
+        for cc in ["FR","DE"]:
             ctx=await b.new_context(locale="es-ES")
             await ctx.add_cookies([{"name":"localization","value":cc,"domain":"ypnmwd-as.myshopify.com","path":"/"}])
             pg=await ctx.new_page()
@@ -28,6 +28,9 @@ async def main():
             L(cc, r)
             await pg.goto(B+"/products/"+H, timeout=90000, wait_until="load"); await pg.wait_for_timeout(2500)
             L(cc,"live boton:",await pg.evaluate("(document.querySelector('product-form-component [ref=addToCartButton]')||document.querySelector('[name=add]')||{innerText:'?'}).innerText.trim()"),"| html country:",await pg.evaluate("(document.querySelector('[name=country_code]')||{value:'?'}).value"))
+            for u in ["/collections/halloween","/collections/navidad","/collections/mas-vendidos","/collections/all"]:
+                rr=await pg.goto(B+u, timeout=90000, wait_until="load")
+                L(cc,u,rr.status,await pg.evaluate("document.querySelectorAll('product-card').length")+0)
             await ctx.close()
         await b.close()
 asyncio.run(main())
