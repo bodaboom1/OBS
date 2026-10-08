@@ -1,9 +1,0 @@
-home movil errores JS: []
-home escritorio errores JS: []
-prod movil errores JS: []
-prod escritorio errores JS: []
-col movil errores JS: []
-col escritorio errores JS: []
-toast: lf-toast lf-on
-carrito: 1 items, total 2490 EUR
-carrito errores JS: []
