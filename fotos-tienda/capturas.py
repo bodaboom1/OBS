@@ -49,8 +49,10 @@ async def main():
             btn=pg.locator("product-form-component button[name=add], .product-information .add-to-cart-button").first
             await btn.click(timeout=10000); await pg.wait_for_timeout(1200)
             await pg.screenshot(path="fotos-tienda/capturas/cart_toast.png")
-            await pg.wait_for_timeout(1500)
-            await pg.screenshot(path="fotos-tienda/capturas/cart_drawer.png")
+            await pg.wait_for_timeout(300)
+            await pg.screenshot(path="fotos-tienda/capturas/cart_toast2.png")
+            t=await pg.evaluate("(document.querySelector('.lf-toast')||{}).className||'sin toast'")
+            log.write("toast: "+t+"\n")
             c=await pg.evaluate("fetch('/cart.js').then(r=>r.json()).then(j=>j.item_count+' items, total '+j.total_price+' '+j.currency)")
             log.write(f"carrito: {c}\n")
         except Exception as e:
