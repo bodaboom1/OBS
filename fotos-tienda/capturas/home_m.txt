@@ -1,12 +1,14 @@
-height=4862
+height=4779
 Ir directamente al contenido
 🎃 Recíbelo para Halloween: pide antes del 10 de octubre
 2d
 09h
-23m
-56s
+21m
+35s
 
 Llévate 2 y ahorra 10 % · Llévate 3 y ahorra 15 %
+
+Devolución en 14 días y garantía de 3 años
 
 Lumifiesta
 lumifiesta
@@ -116,12 +118,12 @@ Precio de oferta 
 Precio habitual 
 €12,90
 ¿Qué estás celebrando?
-Liquid error (snippets/lf-occ line 23): invalid url input
-productos · Ver →
-Liquid error (snippets/lf-occ line 23): invalid url input
-productos · Ver →
-Liquid error (snippets/lf-occ line 23): invalid url input
-productos · Ver →
+Halloween
+5 productos · Ver →
+Navidad
+7 productos · Ver →
+Favoritos de temporada
+2 productos · Ver →
 Cuantos más, mejor
 
 El descuento se aplica solo en el carrito, sin códigos. Puedes mezclar productos.
