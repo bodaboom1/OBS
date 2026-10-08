@@ -1,3 +1,0 @@
-ERROR Page.goto: Timeout 60000ms exceeded.
-Call log:
-  - navigating to "https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos?preview_theme_id=207904145745", waiting until "networkidle"
