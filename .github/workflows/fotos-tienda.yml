@@ -1,0 +1,27 @@
+name: Descargar fotos de la tienda
+on:
+  push:
+    branches: [fotos-tienda]
+    paths: [fotos-tienda/urls.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar
+        run: |
+          mkdir -p fotos-tienda/img
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -sSL --fail -o "fotos-tienda/img/$name.webp" "$url" || echo "fallo $name"
+          done < fotos-tienda/urls.txt
+          ls -la fotos-tienda/img | head -60
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotos-tienda/img
+          git commit -m "Fotos de producto descargadas de la tienda" || echo "nada que guardar"
+          git push
