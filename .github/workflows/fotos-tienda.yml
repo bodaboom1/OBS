@@ -15,7 +15,7 @@ jobs:
           mkdir -p fotos-tienda/img
           while read -r name url; do
             [ -z "$name" ] && continue
-            curl -sSL --fail -o "fotos-tienda/img/$name.webp" "$url" || echo "fallo $name"
+            case "$name" in *.*) out="fotos-tienda/img/$name";; *) out="fotos-tienda/img/$name.webp";; esac; curl -sSL --compressed -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36" -H "Accept-Language: es-ES,es;q=0.9" --fail -o "$out" "$url" || echo "fallo $name"
           done < fotos-tienda/urls.txt
           ls -la fotos-tienda/img | head -60
       - name: Guardar

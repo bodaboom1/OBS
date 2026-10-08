@@ -1,3 +1,2 @@
-col_navidad https://cdn.shopify.com/s/files/1/1088/7276/1681/collections/S61a8158b3f064d87a084690ea36bc7605.webp?v=1791426544
-col_regalos https://cdn.shopify.com/s/files/1/1088/7276/1681/collections/S7c16f5691e98473ba3989c3f6769bb48B.webp?v=1791426546
-col_halloween https://cdn.shopify.com/s/files/1/1088/7276/1681/collections/Sd45684cd2d3c4bf0a27b07f5859e1906C.webp?v=1791409814
+ali_proyector.html https://es.aliexpress.com/item/1005009835258944.html
+ali_proyector_com.html https://www.aliexpress.com/item/1005009835258944.html
