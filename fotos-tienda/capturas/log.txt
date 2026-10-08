@@ -4,3 +4,97 @@ badges: Oferta limitada ★ Favorito | Oferta limitada ★ Favorito | Oferta pac
 ofertas: −15 % con el código HALLOWEEN15 | −15 % con el código HALLOWEEN15 | −15 % llevando 3 o más | −15 % con el código HALLOWEEN15 | −15 % con el código HALLOWEEN15 | −15 % llevando 3 o más | −15 % llevando 3 o más | −15 % llevando 3 o más | −15 % llevando 3 o más | −15 % con el código HALLOWEEN15
 finale: lf-fin is-in p=0.740
 finale p tras scroll: 1.000
+chat ERROR Page.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator(".lf-help__btn")
+    - locator resolved to <button type="button" class="lf-help__btn" aria-expanded="false" data-lf-help-toggle="" aria-controls="lf-help-panel">…</button>
+  - attempting click action
+    2 × waiting for element t
+selector ERROR Locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("header localization-form-component button, header .localization-form__toggle, header [class*=localization] button, header dro
+errores home desk: []
+chat movil ERROR Page.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator(".lf-help__btn")
+    - locator resolved to <button type="button" class="lf-help__btn" aria-expanded="false" data-lf-help-toggle="" aria-controls="lf-help-panel">…</button>
+  - attempting click action
+    2 × waiting for element t
+errores home movil: []
+deal: OFERTA LIMITADA Termina en 23d 02h 23m 36s −15 % en productos de Halloween con el código HALLOWEEN15 COPIAR Válido hasta el 31 oct. Escríbelo en el campo «Código de descuento» al pagar. PROMOCIÓN −10 % llevando 2 · −15 % llevando 3 o más Puedes mezclar productos. Se aplica solo en el carrito.
+copiar: HALLOWEEN15
+¡COPIADO!
+errores ficha: []
+deal2: no
+== sticky m 390x844
+y=0 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=147..626 | atc y=1157..1213 docked=undefined
+y=150 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-3..476 | atc y=1007..1063 docked=undefined
+y=300 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-153..326 | atc y=857..913 docked=undefined
+y=450 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-303..176 | atc y=707..763 docked=undefined
+y=600 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-453..26 | atc y=557..613 docked=undefined
+y=750 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-603..-124 | atc y=407..463 docked=undefined
+y=900 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-753..-274 | atc y=257..313 docked=undefined
+y=1050 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-903..-424 | atc y=107..163 docked=undefined
+y=1200 stuck=false op=0 bar x=0..390 y=884..958 | gal x=0..390 y=-1053..-574 | atc y=-43..13 docked=undefined
+y=1350 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-1203..-724 | atc y=-193..-137 docked=undefined
+y=1500 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-1353..-874 | atc y=-343..-287 docked=undefined
+y=1650 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-1503..-1024 | atc y=-493..-437 docked=undefined
+y=1800 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-1653..-1174 | atc y=-643..-587 docked=undefined
+y=1950 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-1803..-1324 | atc y=-793..-737 docked=undefined
+y=2100 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-1953..-1474 | atc y=-943..-887 docked=undefined
+y=2250 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-2103..-1624 | atc y=-1093..-1037 docked=undefined
+y=2400 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-2253..-1774 | atc y=-1243..-1187 docked=undefined
+y=2550 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-2403..-1924 | atc y=-1393..-1337 docked=undefined
+y=2700 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-2553..-2074 | atc y=-1543..-1487 docked=undefined
+y=2850 stuck=true op=1 bar x=0..390 y=770..844 | gal x=0..390 y=-2703..-2224 | atc y=-1693..-1637 docked=undefined
+errores: []
+== sticky t 820x1180
+y=0 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=151..570 | atc y=724..780 docked=true
+y=150 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=1..420 | atc y=574..630 docked=true
+y=300 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=0..419 | atc y=424..480 docked=true
+y=450 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=0..419 | atc y=274..330 docked=true
+y=600 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=0..419 | atc y=124..180 docked=true
+y=750 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=0..419 | atc y=-26..30 docked=true
+y=900 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-176..-120 docked=true
+y=1050 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-326..-270 docked=true
+y=1200 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-476..-420 docked=true
+y=1350 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-626..-570 docked=true
+y=1500 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-776..-720 docked=true
+y=1650 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-926..-870 docked=true
+y=1800 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-1076..-1020 docked=true
+y=1950 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-1226..-1170 docked=true
+y=2100 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-1376..-1320 docked=true
+y=2250 stuck=true op=1 bar x=380..780 y=1086..1160 | gal x=40..356 y=0..419 | atc y=-1526..-1470 docked=true
+y=2400 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=0..419 | atc y=-1676..-1620 docked=true
+y=2550 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=-29..390 | atc y=-1826..-1770 docked=true
+y=2700 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=-179..240 | atc y=-1976..-1920 docked=true
+y=2850 stuck=false op=0 bar x=380..780 y=1200..1274 | gal x=40..356 y=-329..90 | atc y=-2126..-2070 docked=true
+tras resize 620: stuck=true op=1 bar x=0..620 y=1106..1180 | gal x=0..620 y=-2699..-1990 | atc y=-1550..-1494 docked=undefined
+errores: []
+== sticky d 1440x900
+y=0 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=159..1152 | atc y=682..738 docked=true
+y=150 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=9..1002 | atc y=532..588 docked=true
+y=300 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=0..992 | atc y=382..438 docked=true
+y=450 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=0..992 | atc y=232..288 docked=true
+y=600 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=0..992 | atc y=82..138 docked=true
+y=750 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=0..992 | atc y=-68..-12 docked=true
+y=900 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-218..-162 docked=true
+y=1050 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-368..-312 docked=true
+y=1200 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-518..-462 docked=true
+y=1350 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-668..-612 docked=true
+y=1500 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-818..-762 docked=true
+y=1650 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-968..-912 docked=true
+y=1800 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=0..992 | atc y=-1118..-1062 docked=true
+y=1950 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=-88..905 | atc y=-1268..-1212 docked=true
+y=2100 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=-238..755 | atc y=-1418..-1362 docked=true
+y=2250 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=-388..605 | atc y=-1568..-1512 docked=true
+y=2400 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=-538..455 | atc y=-1718..-1662 docked=true
+y=2550 stuck=true op=1 bar x=947..1400 y=806..880 | gal x=40..923 y=-688..305 | atc y=-1868..-1812 docked=true
+y=2700 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=-838..155 | atc y=-2018..-1962 docked=true
+y=2850 stuck=false op=0 bar x=947..1400 y=920..994 | gal x=40..923 y=-988..5 | atc y=-2168..-2112 docked=true
+tras resize 1240: stuck=false op=0 bar x=813..1200 y=920..994 | gal x=40..789 y=-736..123 | atc y=-2096..-2040 docked=true
+errores: []
+swipe ficha scrollLeft: 390
+carrito: 1 items 2490 EUR
+errores movil ficha: []
+FR pais/moneda:  EUR / ES Región e idioma Buscar País o región No se han enc | boton: Agregar al carrito disabled: False
