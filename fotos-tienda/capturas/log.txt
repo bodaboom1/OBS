@@ -1,11 +1,15 @@
 hijos tarjeta: DIV.card-gallery.card-gallery-Aa3BVc0swcEJMZHI0R__product_card_gallery_677WP3.spacin order=1 | H3.product-grid-view-zoom-out--details order=3 | A.contents.user-select-text order=3 | PRODUCT-PRICE.text-block.text-block--align-left.text-left.h6.spacing-style order=3 | A.lf-cta order=4
 deadline html: <a id="lf-deadline" class="lf-dl" href="/collections/halloween" aria-live="off">
   <span class="lf-dl__sr visually-hidden">Recíbelo para Halloween: pide antes del 10 de octubre</span>
-  <span class="lf-dl__track" aria-hidden="true"><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre</span><span class="lf-dl__clock"><b>2d</b><b>06h</b><b>25m</b><b class="lf-s">49s</b></span><span class="lf-dl__cta">Ver ahora →</span></span><span class="lf-dl__dot">✦</span><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre
-anim: lf-dl__track:lfDlRun:running:matrix(1, 0, 0, 1, -3260.56, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1.03981, 0, 0, 1.03981, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1.03981, 0, 0, 1.03981, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0)
-anim+2s: lf-dl__track:matrix(1, 0, 0, 1, -3053.03, 0) || :matrix(1, 0, 0, 1, 0, 0) || lf-s:matrix(1.05312, 0, 0, 1.05312, 0, 0)
+  <span class="lf-dl__track" aria-hidden="true"><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre</span><span class="lf-dl__clock"><b>2d</b><b>06h</b><b>23m</b><b class="lf-s">34s</b></span><span class="lf-dl__cta">Ver ahora →</span></span><span class="lf-dl__dot">✦</span><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre
+anim: lf-dl__track:lfDlRun:running:matrix(1, 0, 0, 1, -3260.56, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1, 0, 0, 1, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1, 0, 0, 1, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0)
+anim+2s: lf-dl__track:matrix(1, 0, 0, 1, -3058.49, 0) || :matrix(1.01471, 0.120836, -0.120836, 1.01471, 0, 0) || lf-s:matrix(1, 0, 0, 1, 0, 0)
 deadline visible: 0,42,block
-pdp ss attrs: ref,style,initial-slide,infinite,disabled,in-viewport,data-lf-init,actioned | arrows: BUTTON[previous]
+orden tarjeta (y): galeria 506 nombre 506 precio 798 cta 846
+pdp hover primera: first inf=false 0/1
+pdp hover ultima: last inf=false 1/0
+pdp tras flecha <: mid inf=false 1/1 oooXo
+pdp ss attrs: ref,style,initial-slide,disabled,in-viewport,data-lf-init,data-lf-at,actioned | arrows: BUTTON[previous]
     slideshow-control slideshow-control--previous
     
     
@@ -20,7 +24,21 @@ pdp ss attrs: ref,style,initial-slide,infinite,disabled,in-viewport,data-lf-init
     button button-unstyled button-unstyled--transparent
     
   
-card ss arrows: 
+card ss arrows: BUTTON[previous]
+    slideshow-control slideshow-control--previous
+    
+     slideshow-control--shape-circle
+    slideshow-control--style-chevron
+    button button-unstyled button-unstyled--transparent
+     flip-x
+   ; BUTTON[next]
+    slideshow-control slideshow-control--next
+    
+     slideshow-control--shape-circle
+    slideshow-control--style-chevron
+    button button-unstyled button-unstyled--transparent
+    
+  
 pdp box {'x': 0, 'y': 147, 'width': 390, 'height': 390} touch-action: auto ov:scroll snap:x mandatory
 pdp tras swipe scrollLeft: 390 dots: oXooo scrollY 0 0
 card tras swipe scrollLeft: 157 dots: oXooo url https://ypnmwd-as.myshopify.com/
