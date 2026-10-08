@@ -64,12 +64,13 @@ async def main():
         await pg.mouse.wheel(0,1500); await pg.wait_for_timeout(1000); await pg.screenshot(path=D+"d_footer.png")
         L("finale p tras scroll:",await pg.evaluate("document.querySelector('[data-lf-fin]').style.getPropertyValue('--p')"))
         # chat
-        await pg.click(".lf-help__btn"); await pg.wait_for_timeout(600)
-        await pg.click(".lf-chip[data-topic=track]"); await pg.wait_for_timeout(1300)
-        await pg.screenshot(path=D+"d_chat.png")
-        L("chat:",await pg.evaluate("document.querySelector('[data-lf-help-log]').innerText.slice(0,400)"), "form:",await pg.evaluate("!!document.querySelector('[data-lf-help-log] form')"))
-        # selector de pais
-        await pg.click(".lf-help__close"); await pg.wait_for_timeout(300)
+        try:
+          await pg.click(".lf-help__btn",timeout=8000); await pg.wait_for_timeout(600)
+          await pg.click(".lf-chip[data-topic=track]"); await pg.wait_for_timeout(1300)
+          await pg.screenshot(path=D+"d_chat.png")
+          L("chat:",await pg.evaluate("document.querySelector('[data-lf-help-log]').innerText.slice(0,400)"), "form:",await pg.evaluate("!!document.querySelector('[data-lf-help-log] form')"))
+          await pg.click(".lf-help__close"); await pg.wait_for_timeout(300)
+        except Exception as e: L("chat ERROR",str(e)[:300])
         await pg.evaluate("document.querySelector('.page-wrapper').scrollTo(0,0)"); await pg.wait_for_timeout(500)
         try:
             await pg.locator("header localization-form-component button, header .localization-form__toggle, header [class*=localization] button, header dropdown-localization-component button").first.click(timeout=5000)
@@ -84,23 +85,27 @@ async def main():
         await pg.evaluate("document.querySelector('[data-lf-fin]').scrollIntoView({block:'start'})"); await pg.evaluate("window.scrollBy(0,-200)"); await pg.wait_for_timeout(2500)
         await pg.screenshot(path=D+"m_finale.png")
         await pg.evaluate("window.scrollBy(0,700)"); await pg.wait_for_timeout(1000); await pg.screenshot(path=D+"m_footer.png")
-        await pg.click(".lf-help__btn"); await pg.wait_for_timeout(600); await pg.click(".lf-chip[data-topic=ship]"); await pg.wait_for_timeout(1200)
-        await pg.screenshot(path=D+"m_chat.png")
+        try:
+          await pg.click(".lf-help__btn",timeout=8000); await pg.wait_for_timeout(600); await pg.click(".lf-chip[data-topic=ship]"); await pg.wait_for_timeout(1200)
+          await pg.screenshot(path=D+"m_chat.png")
+        except Exception as e: L("chat movil ERROR",str(e)[:300])
         L("errores home movil:",errs); await ctx.close()
         # FICHA
         ctx,pg,errs=await ctxp(b,1440,900); await go(pg,PROD)
         await pg.screenshot(path=D+"d_prod.png")
         L("deal:",await pg.evaluate("(document.querySelector('.lf-deal')||{innerText:'no'}).innerText.replace(/\\s+/g,' ')"))
-        await pg.click(".lf-code"); await pg.wait_for_timeout(300)
-        L("copiar:",await pg.evaluate("document.querySelector('.lf-code').innerText"))
+        try:
+          await pg.click(".lf-code",timeout=8000); await pg.wait_for_timeout(300)
+          L("copiar:",await pg.evaluate("document.querySelector('.lf-code').innerText"))
+        except Exception as e: L("copiar ERROR",str(e)[:200])
         L("errores ficha:",errs); await ctx.close()
         ctx,pg,errs=await ctxp(b,1440,900); await go(pg,PROD2)
         await pg.screenshot(path=D+"d_prod2.png")
         L("deal2:",await pg.evaluate("(document.querySelector('.lf-deal')||{innerText:'no'}).innerText.replace(/\\s+/g,' ')"))
         await ctx.close()
-        await sticky_test(b,"m",390,844,True,L)
-        await sticky_test(b,"t",820,1180,True,L)
-        await sticky_test(b,"d",1440,900,False,L)
+        for a in [("m",390,844,True),("t",820,1180,True),("d",1440,900,False)]:
+            try: await sticky_test(b,*a,L)
+            except Exception as e: L("sticky ERROR",a[0],str(e)[:300])
         # movil: swipe galeria + carrito
         ctx,pg,errs=await ctxp(b,390,844,True); await go(pg,PROD)
         cdp=await ctx.new_cdp_session(pg)
