@@ -19,7 +19,7 @@ async def ctxp(b,w,h,touch=False):
     pg=await ctx.new_page(); errs=[]; pg.on("pageerror", lambda e: errs.append(str(e)))
     return ctx,pg,errs
 async def go(pg,url):
-    await pg.goto(url, timeout=60000, wait_until="networkidle"); await pg.wait_for_timeout(3000); await pg.evaluate(CLEAN)
+    await pg.goto(url, timeout=60000, wait_until="load"); await pg.wait_for_timeout(5000); await pg.evaluate(CLEAN)
 async def main():
     log=open(D+"log.txt","w")
     def L(*a): log.write(" ".join(str(x) for x in a)+"\n"); log.flush()
