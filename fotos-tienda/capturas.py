@@ -1,10 +1,17 @@
 import asyncio
 from playwright.async_api import async_playwright
 B="https://ypnmwd-as.myshopify.com"
-T="preview_theme_id=207926198609"
+T="x=1"
 PAGES={
- "hal": B+"/collections/halloween?"+T,
- "nav": B+"/collections/navidad?"+T,
+ "home": B+"/?"+T,
+ "tela": B+"/products/red-de-telarana-led-para-halloween-8-modos?"+T,
+ "cart": B+"/cart/add?id=55219057131857&quantity=1&return_to=/cart",
+ "faq": B+"/pages/preguntas-frecuentes?"+T,
+ "envios": B+"/pages/envios-y-devoluciones?"+T,
+ "all": B+"/collections/all?"+T,
+ "refund": B+"/policies/refund-policy?"+T,
+ "legal": B+"/policies/legal-notice?"+T,
+ "search": B+"/search?q=luces&"+T,
 }
 async def shots(b,name,url,vw,vh,suf,n):
     ctx=await b.new_context(viewport={"width":vw,"height":vh}, locale="es-ES", device_scale_factor=1)
@@ -30,7 +37,7 @@ async def main():
         b=await p.chromium.launch()
         for name,url in PAGES.items():
             await shots(b,name,url,390,844,"m",8)
-            pass
+            await shots(b,name,url,1366,860,"d",1)
         await b.close()
 asyncio.run(main())
 # r2
