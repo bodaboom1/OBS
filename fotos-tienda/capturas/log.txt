@@ -1,27 +1,27 @@
-cuenta atras: lfDlRun matrix(1, 0, 0, 1, -3260.56, 0)
-cuenta atras +1.5s: matrix(1, 0, 0, 1, -3260.56, 0)
-tarjetas con galeria: 10
-tarjetas con puntos: 10 CTA: 10
-imagenes por tarjeta: 5/5 6/6 5/5 5/5 5/5 5/5 5/5 5/5 5/5 6/6
-tarjeta1 inicio: {"scroll":0,"w":243,"current":0,"arrows":["off:0","on:0"],"dots":"Xoooo"}
-tarjeta1 hover: {"scroll":0,"w":243,"current":0,"arrows":["off:0","on:1"],"dots":"Xoooo"}
-tarjeta1 tras flecha >: {"scroll":244,"w":243,"current":1,"arrows":["on:1","on:1"],"dots":"oXooo"}
-url: https://ypnmwd-as.myshopify.com/
-tarjeta1 tras punto ultimo: {"scroll":976,"w":243,"current":4,"arrows":["on:1","off:0"],"dots":"ooooX"}
-url: https://ypnmwd-as.myshopify.com/
-tras clic Ver producto: https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
-errores JS escritorio home: []
-ficha inicio: {"scroll":0,"w":883,"current":0,"arrows":["on:0","on:0"],"dots":"Xoooo"}
-miniaturas: 5
-ficha tras miniatura 3: {"scroll":1766,"w":883,"current":2,"arrows":["on:0","on:0"],"dots":"ooXoo"}
-ficha hover: {"scroll":1766,"w":883,"current":2,"arrows":["on:1","on:1"],"dots":"ooXoo"}
-errores JS ficha escritorio: []
-movil tarjeta inicio: {"scroll":0,"w":157,"current":0,"arrows":["off:0","on:0"],"dots":"Xoooo"}
-movil tarjeta tras swipe: {"scroll":0,"w":157,"current":0,"arrows":["off:0","on:0"],"dots":"Xoooo"} scrollY antes/despues: 51 51
-errores JS movil home: []
-movil ficha inicio: {"scroll":0,"w":390,"current":0,"arrows":["on:0","on:0"],"dots":"Xoooo"}
-movil ficha tras swipe: {"scroll":0,"w":390,"current":0,"arrows":["on:0","on:0"],"dots":"Xoooo"}
-toast: lf-toast lf-on
-carrito: 1 items, total 2490 EUR
-errores JS movil ficha: []
-coleccion tarjetas: 7 errores: []
+hijos tarjeta: DIV.card-gallery.card-gallery-Aa3BVc0swcEJMZHI0R__product_card_gallery_677WP3.spacin order=1 | H3.product-grid-view-zoom-out--details order=3 | A.contents.user-select-text order=3 | PRODUCT-PRICE.text-block.text-block--align-left.text-left.h6.spacing-style order=3 | A.lf-cta order=4
+deadline html: <a id="lf-deadline" class="lf-dl" href="/collections/halloween" aria-live="off">
+  <span class="lf-dl__sr visually-hidden">Recíbelo para Halloween: pide antes del 10 de octubre</span>
+  <span class="lf-dl__track" aria-hidden="true"><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre</span><span class="lf-dl__clock"><b>2d</b><b>06h</b><b>25m</b><b class="lf-s">49s</b></span><span class="lf-dl__cta">Ver ahora →</span></span><span class="lf-dl__dot">✦</span><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre
+anim: lf-dl__track:lfDlRun:running:matrix(1, 0, 0, 1, -3260.56, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1.03981, 0, 0, 1.03981, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1.03981, 0, 0, 1.03981, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0)
+anim+2s: lf-dl__track:matrix(1, 0, 0, 1, -3053.03, 0) || :matrix(1, 0, 0, 1, 0, 0) || lf-s:matrix(1.05312, 0, 0, 1.05312, 0, 0)
+deadline visible: 0,42,block
+pdp ss attrs: ref,style,initial-slide,infinite,disabled,in-viewport,data-lf-init,actioned | arrows: BUTTON[previous]
+    slideshow-control slideshow-control--previous
+    
+    
+    slideshow-control--style-chevron
+    button button-unstyled button-unstyled--transparent
+     flip-x
+   ; BUTTON[next]
+    slideshow-control slideshow-control--next
+    
+    
+    slideshow-control--style-chevron
+    button button-unstyled button-unstyled--transparent
+    
+  
+card ss arrows: 
+pdp box {'x': 0, 'y': 147, 'width': 390, 'height': 390} touch-action: auto ov:scroll snap:x mandatory
+pdp tras swipe scrollLeft: 390 dots: oXooo scrollY 0 0
+card tras swipe scrollLeft: 157 dots: oXooo url https://ypnmwd-as.myshopify.com/
+errores: []
