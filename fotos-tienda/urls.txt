@@ -1,4 +1,3 @@
-chk_us2.json https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos.js
-chk_es.json https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos.js
-chk_us_live.html https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos
-chk_cart_us.json https://ypnmwd-as.myshopify.com/en-us/cart.js
+p1.json https://m.aliexpress.com/api/products/1005009648924450?shipToCountry=ES&currency=EUR
+p2.html https://m.es.aliexpress.com/item/1005009648924450.html
+p3.json https://acs.aliexpress.com/h5/mtop.aliexpress.pdp.pc.query/1.0/?jsv=2.5.1&appKey=12574478&api=mtop.aliexpress.pdp.pc.query&v=1.0&type=originaljson&dataType=json&data=%7B%22productId%22%3A%221005009648924450%22%2C%22_lang%22%3A%22es_ES%22%2C%22_currency%22%3A%22EUR%22%2C%22country%22%3A%22ES%22%7D
