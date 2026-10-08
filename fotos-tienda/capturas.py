@@ -1,10 +1,11 @@
 import asyncio
 from playwright.async_api import async_playwright
 B="https://ypnmwd-as.myshopify.com"
-T="preview_theme_id=207924363601"
+T="x=1"
 PAGES={
  "home": B+"/?"+T,
  "prod": B+"/products/lampara-proyectora-de-luna-usb-halloween-y-navidad?"+T,
+ "cart": B+"/cart?"+T,
 }
 async def shots(b,name,url,vw,vh,suf,n):
     ctx=await b.new_context(viewport={"width":vw,"height":vh}, locale="es-ES", device_scale_factor=1)
