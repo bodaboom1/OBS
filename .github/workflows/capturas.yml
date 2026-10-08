@@ -1,0 +1,20 @@
+name: Capturas de la tienda
+on:
+  push:
+    branches: [fotos-tienda]
+    paths: [fotos-tienda/capturas.py]
+permissions:
+  contents: write
+jobs:
+  capturas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: mkdir -p fotos-tienda/capturas && python fotos-tienda/capturas.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotos-tienda/capturas
+          git commit -m "Capturas de la tienda" || echo nada
+          git pull --rebase && git push
