@@ -8,6 +8,7 @@ PAGES={
 }
 async def shots(b,name,url,vw,vh,suf,n):
     ctx=await b.new_context(viewport={"width":vw,"height":vh}, locale="es-ES", device_scale_factor=1)
+    await ctx.add_cookies([{"name":"localization","value":"ES","domain":"ypnmwd-as.myshopify.com","path":"/"},{"name":"cart_currency","value":"EUR","domain":"ypnmwd-as.myshopify.com","path":"/"}])
     await ctx.add_init_script("try{sessionStorage.setItem('lfIntro','1');localStorage.setItem('lfPop',JSON.stringify({closed:Date.now()}))}catch(e){}")
     pg=await ctx.new_page()
     try:
