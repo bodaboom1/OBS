@@ -8,7 +8,7 @@ async def main():
     def L(*a): log.write(" ".join(str(x) for x in a)+"\n"); log.flush()
     async with async_playwright() as p:
         b=await p.chromium.launch()
-        for cc in ["FR","DE"]:
+        for cc in ["FR","DE","PT","ES"]:
             ctx=await b.new_context(locale="es-ES")
             await ctx.add_cookies([{"name":"localization","value":cc,"domain":"ypnmwd-as.myshopify.com","path":"/"}])
             pg=await ctx.new_page()
