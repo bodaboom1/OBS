@@ -1,30 +1,6 @@
-== 1440 /
-html ox/oy hidden/hidden h=900px | body ox/oy hidden/hidden h=900px | scrollingEl=HTML
-DIV#.page-wrapper ox=auto oy=auto h=900px sh=3865 ch=900
-== 1440 /products/red-de-telarana-led-para-halloween-8-modos
-html ox/oy hidden/hidden h=900px | body ox/oy hidden/hidden h=900px | scrollingEl=HTML
-DIV#.page-wrapper ox=auto oy=auto h=900px sh=3343 ch=900
-SPAN.buy-buttons-block.buy-buttons-block--AUlNIZFhKd1Q3Uitia__buy x=971 w=429
-DIV..group-block-content.layout-panel-flex.layout-panel-flex--co x=971 w=429
-DIV..group-block.group-block--height-fit.group-block--width-fill x=971 w=429
-DIV..product-details.sticky-content--desktop. x=947 w=453
-PRODUCT-COMPONENT.product-information__grid.product-information--media-left x=40 w=1360
-DIV.product-information.section.section--page-width.spacing-styl x=0 w=1440
-DIV.shopify-section x=0 w=1440
-MAIN.content-for-layout x=0 w=1440
-DIV.page-wrapper x=0 w=1440
-== 390 /
-html ox/oy visible/visible h=5138.64px | body ox/oy visible/visible h=5138.64px | scrollingEl=HTML
-DIV#.menu-drawer__submenu has-submenu color-c ox=auto oy=auto h=844px sh=896 ch=844
-== 390 /products/red-de-telarana-led-para-halloween-8-modos
-html ox/oy visible/visible h=3604.67px | body ox/oy visible/visible h=3604.67px | scrollingEl=HTML
-DIV#.menu-drawer__submenu has-submenu color-c ox=auto oy=auto h=844px sh=896 ch=844
-SPAN.buy-buttons-block.buy-buttons-block--AUlNIZFhKd1Q3Uitia__buy x=16 w=358
-DIV..group-block-content.layout-panel-flex.layout-panel-flex--co x=16 w=358
-DIV..group-block.group-block--height-fit.group-block--width-fill x=16 w=358
-DIV..product-details.sticky-content--desktop. x=16 w=358
-PRODUCT-COMPONENT.product-information__grid.product-information--media-left x=0 w=390
-DIV.product-information.section.section--page-width.spacing-styl x=0 w=390
-DIV.shopify-section x=0 w=390
-MAIN.content-for-layout x=0 w=390
-DIV.page-wrapper x=0 w=390
+logo: Fraunces, Georgia, "Times New Roman", serif 28px
+hero img: lumifiesta-banner-desktop.jpg 1440x630
+badges: Oferta limitada ★ Favorito | Oferta limitada ★ Favorito | Oferta pack | Oferta limitada | Oferta limitada | Oferta pack | Oferta pack | Oferta pack | Oferta pack | Oferta limitada
+ofertas: −15 % con el código HALLOWEEN15 | −15 % con el código HALLOWEEN15 | −15 % llevando 3 o más | −15 % con el código HALLOWEEN15 | −15 % con el código HALLOWEEN15 | −15 % llevando 3 o más | −15 % llevando 3 o más | −15 % llevando 3 o más | −15 % llevando 3 o más | −15 % con el código HALLOWEEN15
+finale: lf-fin is-in p=0.740
+finale p tras scroll: 1.000
