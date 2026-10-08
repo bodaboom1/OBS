@@ -1,22 +1,3 @@
-CARD {"t":"","price":"€12,90","cap":"","ref":"Precio por unidad: €12,90 €10,97 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€17,90","cap":"","ref":"Precio por unidad: €17,90 €15,22 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€9,90","cap":"","ref":"Precio por unidad: €9,90 €8,42 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€9,90","cap":"","ref":"Precio por unidad: €9,90 €8,42 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€11,90","cap":"","ref":"Precio por unidad: €11,90 €10,12 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€6,90","cap":"","ref":"Precio por unidad: €6,90 €5,87 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€14,90","cap":"","ref":"Precio por unidad: €14,90 €12,67 /ud. llevando 3","badges":"★ Favorito","pct":false}
-CARD {"t":"","price":"€19,90","cap":"","ref":"Precio por unidad: €19,90 €16,92 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€15,90","cap":"","ref":"Precio por unidad: €15,90 €13,52 /ud. llevando 3","badges":"","pct":false}
-CARD {"t":"","price":"€25,99","cap":"","ref":"Precio por unidad: €25,99 €22,09 /ud. llevando 3","badges":"★ Favorito","pct":false}
-pagina con %: 
-errores col: []
-PDP red-de-telarana-led-para-halloween-8-modos precio: €25,99 | tiers: 1 ud. €25,99 || 2 uds. €25,99 €23,39/ud. || MEJOR PRECIO 3 uds. €25,99 €22,09/ud. | deal: False | % visibles: Pago 100 % seguro
+ref movil alturas: 33px Precio por unidad: €12,90 €10,97 /ud. llevando 3 | 33px Precio por unidad: €17,90 €15,22 /ud. llevando 3 | 17px Precio por unidad: €9,90 €8,42 /ud. llevando 3 | 17px Precio por unidad: €9,90 €8,42 /ud. llevando 3
+tier1 deco: none
 errores: []
-PDP guirnalda-led-impermeable-para-navidad-1-m precio: €6,90 | tiers: 1 ud. €6,90 || 2 uds. €6,90 €6,21/ud. || MEJOR PRECIO 3 uds. €6,90 €5,87/ud. | deal: False | % visibles: Pago 100 % seguro
-errores: []
-PDP proyector-de-copos-de-nieve-led-giratorio-para-navidad precio: €19,90 | tiers: 1 ud. €19,90 || 2 uds. €19,90 €17,91/ud. || MEJOR PRECIO 3 uds. €19,90 €16,92/ud. | deal: False | % visibles: Pago 100 % seguro
-errores: []
-errores movil: []
-home secciones: 38257__hero_jVaWmY:577 65938257__jg_props:88 roduct_list_fa6P9H:1036 0665938257__lf_occ:572 0665938257__lf_how:311 0665938257__jg_faq:742
-anuncio/hero: Envío GRATIS en pedidos desde 25 € |  |  | LUMIFIESTA · LUCES PARA CELEBRAR | Luz cálida para tus fiestas | Guirnaldas, telarañas, ramas y proyectores que se ponen en minutos. Envío gratis desde 25 € y devolución en 14 días.
-errores home: []
