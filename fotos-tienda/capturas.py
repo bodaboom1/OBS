@@ -20,38 +20,15 @@ async def main():
     def L(*a): log.write(" ".join(str(x) for x in a)+"\n"); log.flush()
     async with async_playwright() as p:
         b=await p.chromium.launch()
-        try:
-            ctx,pg,errs=await ctxp(b,1440,900,False,INIT2)
-            await pg.goto(HOME, timeout=90000, wait_until="domcontentloaded"); await pg.wait_for_timeout(1600)
-            await pg.screenshot(path=D+"intro.png"); await ctx.close()
-        except Exception as e: L("intro ERROR",str(e)[:200])
-        ctx,pg,errs=await ctxp(b,1440,900); await go(pg,HOME)
-        try:
-            await pg.click(".lf-help__btn",timeout=8000); await pg.wait_for_timeout(600)
-            await pg.click(".lf-chip[data-topic=track]"); await pg.wait_for_timeout(1300)
-            await pg.screenshot(path=D+"d_chat.png")
-            L("chat ok, form:",await pg.evaluate("!!document.querySelector('[data-lf-help-log] form')"))
-            await pg.keyboard.press("Escape"); await pg.wait_for_timeout(300)
-        except Exception as e: L("chat ERROR",str(e)[:400])
-        try:
-            btn=None
-            for c in await pg.locator("header button, header summary").all():
-                if await c.is_visible() and "EUR" in (await c.inner_text()): btn=c; break
-            await btn.click(); await pg.wait_for_timeout(1000)
-            await pg.screenshot(path=D+"d_country.png")
-            L("paises visibles:",await pg.evaluate("[...document.querySelectorAll('header li, [role=option]')].filter(e=>e.offsetParent&&/EUR/.test(e.innerText)).map(e=>e.innerText.replace(/\\s+/g,' ').trim()).slice(0,40).join(' ; ')"))
-            L("hay US:",await pg.evaluate("/United States|Estados Unidos/.test([...document.querySelectorAll('header li')].map(e=>e.innerText).join(' '))"))
-        except Exception as e: L("selector ERROR",str(e)[:300])
-        L("errores:",errs); await ctx.close()
         ctx,pg,errs=await ctxp(b,390,844,True); await go(pg,HOME)
-        await pg.screenshot(path=D+"m_home.png")
-        await pg.evaluate("document.querySelector('[data-lf-fin]').scrollIntoView({block:'start'})"); await pg.evaluate("window.scrollBy(0,-160)"); await pg.wait_for_timeout(2500)
+        H=await pg.evaluate("document.documentElement.scrollHeight")
+        for y in range(0,H,500):
+            await pg.evaluate(f"window.scrollTo(0,{y})"); await pg.wait_for_timeout(150)
+        top=await pg.evaluate("document.querySelector('[data-lf-fin]').getBoundingClientRect().top+window.scrollY")
+        await pg.evaluate(f"window.scrollTo(0,{top}-120)"); await pg.wait_for_timeout(2500)
+        L("scrollY",await pg.evaluate("window.scrollY"),"fin top",top)
         await pg.screenshot(path=D+"m_finale.png")
         await pg.evaluate("window.scrollBy(0,700)"); await pg.wait_for_timeout(1200); await pg.screenshot(path=D+"m_footer.png")
-        try:
-            await pg.click(".lf-help__btn",timeout=8000); await pg.wait_for_timeout(600); await pg.click(".lf-chip[data-topic=ship]"); await pg.wait_for_timeout(1300)
-            await pg.screenshot(path=D+"m_chat.png")
-        except Exception as e: L("chat movil ERROR",str(e)[:300])
         L("errores movil:",errs); await ctx.close()
         await b.close()
 asyncio.run(main())
