@@ -1,7 +1,3 @@
-There was a problem loading this website
-
-Try refreshing the page.
-
-If the site still doesn't load, please try again in a few minutes.
-
-Refresh Page
+ERROR Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://ypnmwd-as.myshopify.com/en-us/products/red-de-telarana-led-para-halloween-8-modos?preview_theme_id=207904145745", waiting until "networkidle"
