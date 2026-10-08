@@ -1,18 +1,6 @@
-chat: ¡Hola! 👋 ¿En qué te ayudamos? Puedes seguir tu pedido o consultar envíos y devoluciones. 📦 Rastrear mi pedido Puedes seguir tu pedido de dos formas: Entra con el email de tu compra y abre Mis pedidos: verás el estado y el enlace de seguimiento. Abre el enlace del email de confirmación de envío que te enviamos. Ver mis pedidos → ¿No lo encuentras? Déjanos el número de pedido y lo revisamos por ti: Email de la compra Nº de pedido (opcional) Mensaje Enviar | form en chat: True | enlace: https://shopify.com/108872761681/account/orders?locale=es&region_country=ES&buyer_flags=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5cG5td2QtYXMubXlzaG9waWZ5LmNvbSIsImZsYWdzIjpbXSwiZXhwIjoxNzkyMDk2ODEyLCJuYmYiOjE3OTE0OTIwMTJ9.bcV8UNkhpFMKQVno4ld_VN7inbDgGqoTOgJfAEoEn8U
-cerrado con Esc: True
-html localizacion: no
-selector ERROR Locator.click: Timeout 6000ms exceeded.
-Call log:
-  - waiting for locator("header").get_by_text("EUR / ES").first
-    - locator resolved to <div class="drawer-localization__button--label h6">…</div>
-  - attempting click action
-    2 × waiting for element to be visible, enabled and stable
-      - ele
-errores: []
-POST localizacion FR: 200
-FR cabecera: ? | boton: No disponible | disabled: True
-FR ERROR Locator.click: Timeout 30000ms exceeded.
-Call log:
-  - waiting for locator("product-form-component [ref=addToCartButton]").first
-    - locator resolved to <button disabled name="add" type="submit" ref="addToCartButton" on:click="/handleClick" data-testid="standalone-add-to-cart" id="BuyButtons-Produ
-errores movil: []
+ES {"post":200,"detected":"{\"detected_values\":{\"country_name\":\"Estados Unidos\",\"country\":{\"handle\":\"US\",\"name\":\"Estados Unidos\"}},\"features\":{},\"suggestions\":[]}","available":true,"vavail":"true","price":2490,"add":"200 {\"id\":55219057131857,\"properties\":{},\"quantity\":1,\"variant_id\":55219057131857,\"key\":\"55219057131857:9f79b4e81bfc0ed1e25e4c26fb52cb61\",\"title\":\"Telaraña Gigante ","cart":"1 EUR"}
+ES live boton: Agregar al carrito | html country: ES
+FR {"post":200,"detected":"{\"detected_values\":{\"country_name\":\"Estados Unidos\",\"country\":{\"handle\":\"US\",\"name\":\"Estados Unidos\"}},\"features\":{},\"suggestions\":[]}","available":false,"vavail":"false","price":2490,"add":"422 {\"status\":422,\"message\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\",\"description\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\"}","cart":"0 EUR"}
+FR live boton: No disponible | html country: FR
+DE {"post":200,"detected":"{\"detected_values\":{\"country_name\":\"Estados Unidos\",\"country\":{\"handle\":\"US\",\"name\":\"Estados Unidos\"}},\"features\":{},\"suggestions\":[]}","available":false,"vavail":"false","price":2490,"add":"422 {\"status\":422,\"message\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\",\"description\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\"}","cart":"0 EUR"}
+DE live boton: No disponible | html country: DE
