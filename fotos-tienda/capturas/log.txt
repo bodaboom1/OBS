@@ -1,45 +1,210 @@
-hijos tarjeta: DIV.card-gallery.card-gallery-Aa3BVc0swcEJMZHI0R__product_card_gallery_677WP3.spacin order=1 | H3.product-grid-view-zoom-out--details order=3 | A.contents.user-select-text order=3 | PRODUCT-PRICE.text-block.text-block--align-left.text-left.h6.spacing-style order=3 | A.lf-cta order=4
-deadline html: <a id="lf-deadline" class="lf-dl" href="/collections/halloween" aria-live="off">
-  <span class="lf-dl__sr visually-hidden">Recíbelo para Halloween: pide antes del 10 de octubre</span>
-  <span class="lf-dl__track" aria-hidden="true"><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre</span><span class="lf-dl__clock"><b>2d</b><b>06h</b><b>23m</b><b class="lf-s">34s</b></span><span class="lf-dl__cta">Ver ahora →</span></span><span class="lf-dl__dot">✦</span><span class="lf-dl__item"><em>🎃</em><span>Recíbelo para Halloween: pide antes del 10 de octubre
-anim: lf-dl__track:lfDlRun:running:matrix(1, 0, 0, 1, -3260.56, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1, 0, 0, 1, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0) || lf-s:lfDlTick:running:matrix(1, 0, 0, 1, 0, 0) || :lfDlWiggle:running:matrix(1, 0, 0, 1, 0, 0)
-anim+2s: lf-dl__track:matrix(1, 0, 0, 1, -3058.49, 0) || :matrix(1.01471, 0.120836, -0.120836, 1.01471, 0, 0) || lf-s:matrix(1, 0, 0, 1, 0, 0)
-deadline visible: 0,42,block
-orden tarjeta (y): galeria 506 nombre 506 precio 798 cta 846
-pdp hover primera: first inf=false 0/1
-pdp hover ultima: last inf=false 1/0
-pdp tras flecha <: mid inf=false 1/1 oooXo
-pdp ss attrs: ref,style,initial-slide,disabled,in-viewport,data-lf-init,data-lf-at,actioned | arrows: BUTTON[previous]
-    slideshow-control slideshow-control--previous
+== m 390x844
+sticky html: <sticky-add-to-cart class="sticky-add-to-cart" data-variant-available="true" data-product-id="11222981050705" data-current-variant-id="55219057131857" data-initial-quantity="1" data-default-variant-title="Título predeterminado">
+    <div class="sticky-add-to-cart__bar color-custom-popover" data-stuck="false" ref="stickyBar" role="region" aria-label="Barra de agregar rápido al carrito">
+      
+      
+        <div class="sticky-add-to-cart__image">
+          
+          <img src="//ypnmwd-as.myshopify.com/cdn/shop/files/Sd45684cd2d3c4bf0a27b07f5859e1906C.webp?v=1791409330&amp;width=120" alt="Red de telaraña LED para Halloween" width="120" height="120" loading="lazy" class="sticky-add-to-cart__image-img" data-testid="sticky-product-image" ref="productImage">
+        </div>
+      
+
+      
+      <div class="sticky-add-to-cart__info" data-has-image="true" data-singleton="true" data-single-option="false">
+        <p class="sticky-add-to-cart__title" data-testid="sticky-product-title">
+          Telaraña Gigante LED
+        </p>
+        <div class="sticky-add-to-cart__variant" data-testid="sticky-variant-title" style="display: none;">
+          
+        </div>
+      </div>
+
+      <div class="sticky-add-to-cart__price" data-testid="sticky-price-display">
+        
+
+<div ref="priceContainer">
+  
     
     
-    slideshow-control--style-chevron
-    button button-unstyled button-unstyled--transparent
-     flip-x
-   ; BUTTON[next]
-    slideshow-control slideshow-control--next
-    
-    
-    slideshow-control--style-chevron
-    button button-unstyled button-unstyled--transparent
+      <span class="price"><bdi>€24,90</bdi></span>
     
   
-card ss arrows: BUTTON[previous]
-    slideshow-control slideshow-control--previous
+</div>
+      </div>
+
+      <button type="button" class="sticky-add-to-cart__button add-to-cart-button button" ref="addToCartBu
+sticky css: fixed | 0px | 769.625px | 195px | -195px | 390px | matrix(1, 0, 0, 1, -195, 114.375) | transform 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete, opacity 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete, display 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete
+y=0 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=813..959 atc=813..869 gal=147..626 hdr=71..131 footer=3450..3605 H=3605
+y=120 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=693..839 atc=693..749 gal=27..506 hdr=-1..59 footer=3330..3485 H=3605
+y=240 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=573..719 atc=573..629 gal=-93..386 hdr=-1..59 footer=3210..3365 H=3605
+y=360 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=453..599 atc=453..509 gal=-213..266 hdr=-1..59 footer=3090..3245 H=3605
+y=480 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=333..479 atc=333..389 gal=-333..146 hdr=-1..59 footer=2970..3125 H=3605
+y=600 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=213..359 atc=213..269 gal=-453..26 hdr=-1..59 footer=2850..3005 H=3605
+y=720 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=93..239 atc=93..149 gal=-573..-94 hdr=-1..59 footer=2730..2885 H=3605
+y=840 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-27..119 atc=-27..29 gal=-693..-214 hdr=-1..59 footer=2610..2765 H=3605
+y=960 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-147..-1 atc=-147..-91 gal=-813..-334 hdr=-1..59 footer=2490..2645 H=3605
+y=1080 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-267..-121 atc=-267..-211 gal=-933..-454 hdr=-1..59 footer=2370..2525 H=3605
+y=1200 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-387..-241 atc=-387..-331 gal=-1053..-574 hdr=-1..59 footer=2250..2405 H=3605
+y=1320 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-507..-361 atc=-507..-451 gal=-1173..-694 hdr=-1..59 footer=2130..2285 H=3605
+y=1440 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-627..-481 atc=-627..-571 gal=-1293..-814 hdr=-1..59 footer=2010..2615 H=4055
+y=1560 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-747..-601 atc=-747..-691 gal=-1413..-934 hdr=-1..59 footer=1890..2495 H=4055
+y=1680 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-867..-721 atc=-867..-811 gal=-1533..-1054 hdr=-1..59 footer=1770..2375 H=4055
+y=1800 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-987..-841 atc=-987..-931 gal=-1653..-1174 hdr=-1..59 footer=1650..2255 H=4055
+y=1920 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1107..-961 atc=-1107..-1051 gal=-1773..-1294 hdr=-1..59 footer=1966..2571 H=4491
+y=2040 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1227..-1081 atc=-1227..-1171 gal=-1893..-1414 hdr=-1..59 footer=1846..2451 H=4491
+y=2160 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1347..-1201 atc=-1347..-1291 gal=-2013..-1534 hdr=-1..59 footer=1726..2331 H=4491
+y=2280 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1467..-1321 atc=-1467..-1411 gal=-2133..-1654 hdr=-1..59 footer=1606..2211 H=4491
+y=2400 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1587..-1441 atc=-1587..-1531 gal=-2253..-1774 hdr=-1..59 footer=1486..2091 H=4491
+y=2520 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1707..-1561 atc=-1707..-1651 gal=-2373..-1894 hdr=-1..59 footer=1366..1971 H=4491
+y=2640 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1827..-1681 atc=-1827..-1771 gal=-2493..-2014 hdr=-1..59 footer=1246..1851 H=4491
+y=2760 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-1947..-1801 atc=-1947..-1891 gal=-2613..-2134 hdr=-1..59 footer=1126..1731 H=4491
+y=2880 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-2067..-1921 atc=-2067..-2011 gal=-2733..-2254 hdr=-1..59 footer=1006..1611 H=4491
+y=3000 stuck=true bar=770..844 op=1 vis=visible pos=fixed bb=-2187..-2041 atc=-2187..-2131 gal=-2853..-2374 hdr=-1..59 footer=886..1491 H=4491
+y=3120 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2307..-2161 atc=-2307..-2251 gal=-2973..-2494 hdr=-1..59 footer=766..1371 H=4491
+y=3240 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2427..-2281 atc=-2427..-2371 gal=-3093..-2614 hdr=-1..59 footer=646..1251 H=4491
+y=3360 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2547..-2401 atc=-2547..-2491 gal=-3213..-2734 hdr=-1..59 footer=526..1131 H=4491
+y=3480 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2667..-2521 atc=-2667..-2611 gal=-3333..-2854 hdr=-1..59 footer=406..1011 H=4491
+y=3600 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2787..-2641 atc=-2787..-2731 gal=-3453..-2974 hdr=-1..59 footer=286..891 H=4491
+y=3647 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2834..-2688 atc=-2834..-2778 gal=-3500..-3021 hdr=-1..59 footer=239..844 H=4491
+y=3647 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2834..-2688 atc=-2834..-2778 gal=-3500..-3021 hdr=-1..59 footer=239..844 H=4491
+y=3647 stuck=false bar=884..958 op=0 vis=visible pos=fixed bb=-2834..-2688 atc=-2834..-2778 gal=-3500..-3021 hdr=-1..59 footer=239..844 H=4491
+== t 820x1180
+sticky html: <sticky-add-to-cart class="sticky-add-to-cart" data-variant-available="true" data-product-id="11222981050705" data-current-variant-id="55219057131857" data-initial-quantity="1" data-default-variant-title="Título predeterminado">
+    <div class="sticky-add-to-cart__bar color-custom-popover" data-stuck="false" ref="stickyBar" role="region" aria-label="Barra de agregar rápido al carrito">
+      
+      
+        <div class="sticky-add-to-cart__image">
+          
+          <img src="//ypnmwd-as.myshopify.com/cdn/shop/files/Sd45684cd2d3c4bf0a27b07f5859e1906C.webp?v=1791409330&amp;width=120" alt="Red de telaraña LED para Halloween" width="120" height="120" loading="lazy" class="sticky-add-to-cart__image-img" data-testid="sticky-product-image" ref="productImage">
+        </div>
+      
+
+      
+      <div class="sticky-add-to-cart__info" data-has-image="true" data-singleton="true" data-single-option="false">
+        <p class="sticky-add-to-cart__title" data-testid="sticky-product-title">
+          Telaraña Gigante LED
+        </p>
+        <div class="sticky-add-to-cart__variant" data-testid="sticky-variant-title" style="display: none;">
+          
+        </div>
+      </div>
+
+      <div class="sticky-add-to-cart__price" data-testid="sticky-price-display">
+        
+
+<div ref="priceContainer">
+  
     
-     slideshow-control--shape-circle
-    slideshow-control--style-chevron
-    button button-unstyled button-unstyled--transparent
-     flip-x
-   ; BUTTON[next]
-    slideshow-control slideshow-control--next
     
-     slideshow-control--shape-circle
-    slideshow-control--style-chevron
-    button button-unstyled button-unstyled--transparent
+      <span class="price"><bdi>€24,90</bdi></span>
     
   
-pdp box {'x': 0, 'y': 147, 'width': 390, 'height': 390} touch-action: auto ov:scroll snap:x mandatory
-pdp tras swipe scrollLeft: 390 dots: oXooo scrollY 0 0
-card tras swipe scrollLeft: 157 dots: oXooo url https://ypnmwd-as.myshopify.com/
-errores: []
+</div>
+      </div>
+
+      <button type="button" class="sticky-add-to-cart__button add-to-cart-button button" ref="addToCartBu
+sticky css: fixed | 20px | 1085.62px | 410px | -190px | 600px | matrix(1, 0, 0, 1, -300, 114.375) | transform 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete, opacity 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete, display 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete
+y=0 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=380..532 atc=380..436 gal=151..570 hdr=75..135 footer=2964..3364 H=3364
+y=120 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=260..412 atc=260..316 gal=31..450 hdr=-1..59 footer=2844..3244 H=3364
+y=240 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=140..292 atc=140..196 gal=0..419 hdr=-1..59 footer=2724..3124 H=3364
+y=360 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=20..172 atc=20..76 gal=0..419 hdr=-1..59 footer=2604..3004 H=3364
+y=480 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-100..52 atc=-100..-44 gal=0..419 hdr=-1..59 footer=2484..2884 H=3364
+y=600 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-220..-68 atc=-220..-164 gal=0..419 hdr=-1..59 footer=2364..2764 H=3364
+y=720 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-340..-188 atc=-340..-284 gal=0..419 hdr=-1..59 footer=2244..2644 H=3364
+y=840 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-460..-308 atc=-460..-404 gal=0..419 hdr=-1..59 footer=2124..2524 H=3364
+y=960 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-580..-428 atc=-580..-524 gal=0..419 hdr=-1..59 footer=2004..2404 H=3364
+y=1080 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-700..-548 atc=-700..-644 gal=0..419 hdr=-1..59 footer=1992..2393 H=3473
+y=1200 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-820..-668 atc=-820..-764 gal=0..419 hdr=-1..59 footer=1872..2273 H=3473
+y=1320 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-940..-788 atc=-940..-884 gal=0..419 hdr=-1..59 footer=1752..2153 H=3473
+y=1440 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-1060..-908 atc=-1060..-1004 gal=0..419 hdr=-1..59 footer=1632..2033 H=3473
+y=1560 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-1180..-1028 atc=-1180..-1124 gal=0..419 hdr=-1..59 footer=1512..1913 H=3473
+y=1680 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-1300..-1148 atc=-1300..-1244 gal=0..419 hdr=-1..59 footer=1392..1793 H=3473
+y=1800 stuck=true bar=1086..1160 op=1 vis=visible pos=fixed bb=-1420..-1268 atc=-1420..-1364 gal=0..419 hdr=-1..59 footer=1272..1673 H=3473
+y=1920 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1540..-1388 atc=-1540..-1484 gal=0..419 hdr=-1..59 footer=1152..1553 H=3473
+y=2040 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1660..-1508 atc=-1660..-1604 gal=0..419 hdr=-1..59 footer=1032..1433 H=3473
+y=2160 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1780..-1628 atc=-1780..-1724 gal=0..419 hdr=-1..59 footer=912..1313 H=3473
+y=2280 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1900..-1748 atc=-1900..-1844 gal=-103..315 hdr=-1..59 footer=792..1193 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+y=2293 stuck=false bar=1200..1274 op=0 vis=visible pos=fixed bb=-1913..-1761 atc=-1913..-1857 gal=-116..302 hdr=-1..59 footer=779..1180 H=3473
+== d 1440x900
+sticky html: <sticky-add-to-cart class="sticky-add-to-cart" data-variant-available="true" data-product-id="11222981050705" data-current-variant-id="55219057131857" data-initial-quantity="1" data-default-variant-title="Título predeterminado">
+    <div class="sticky-add-to-cart__bar color-custom-popover" data-stuck="false" ref="stickyBar" role="region" aria-label="Barra de agregar rápido al carrito">
+      
+      
+        <div class="sticky-add-to-cart__image">
+          
+          <img src="//ypnmwd-as.myshopify.com/cdn/shop/files/Sd45684cd2d3c4bf0a27b07f5859e1906C.webp?v=1791409330&amp;width=120" alt="Red de telaraña LED para Halloween" width="120" height="120" loading="lazy" class="sticky-add-to-cart__image-img" data-testid="sticky-product-image" ref="productImage">
+        </div>
+      
+
+      
+      <div class="sticky-add-to-cart__info" data-has-image="true" data-singleton="true" data-single-option="false">
+        <p class="sticky-add-to-cart__title" data-testid="sticky-product-title">
+          Telaraña Gigante LED
+        </p>
+        <div class="sticky-add-to-cart__variant" data-testid="sticky-variant-title" style="display: none;">
+          
+        </div>
+      </div>
+
+      <div class="sticky-add-to-cart__price" data-testid="sticky-price-display">
+        
+
+<div ref="priceContainer">
+  
+    
+    
+      <span class="price"><bdi>€24,90</bdi></span>
+    
+  
+</div>
+      </div>
+
+      <button type="button" class="sticky-add-to-cart__button add-to-cart-button button" ref="addToCartBu
+sticky css: fixed | 20px | 805.625px | 720px | 120px | 600px | matrix(1, 0, 0, 1, -300, 114.375) | transform 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete, opacity 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete, display 0.3s cubic-bezier(0.32, 0.72, 0, 1) allow-discrete
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
+y=0 stuck=false bar=920..994 op=0 vis=visible pos=fixed bb=410..561 atc=410..466 gal=159..1152 hdr=75..143 footer=3195..3343 H=900
