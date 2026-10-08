@@ -66,7 +66,7 @@ Pulsa **Publicar**. Meta suele revisar el anuncio en unas horas.
 ## 3. Qué evitar en el texto (para que Meta no lo rechace y para cumplir la ley)
 
 - **No pongas «−26 %» ni «antes 26,90 €» en el anuncio.** En la UE, un descuento solo es legal si el precio de antes es el más bajo que tuvo el producto en los 30 días anteriores. Como la tienda es nueva, es mejor no anunciarlo.
-- **No digas «envío gratis» a secas.** La telaraña cuesta 19,90 € y el envío es gratis a partir de 25 €. Si quieres mencionarlo, di «envío gratis desde 25 €».
+- **No digas «envío gratis» a secas.** La telaraña cuesta 24,90 € y el envío es gratis a partir de 25 €. Si quieres mencionarlo, di «envío gratis desde 25 €».
 - **No pongas «la más vendida».** Todavía no hay ventas que lo demuestren.
 
 ---
