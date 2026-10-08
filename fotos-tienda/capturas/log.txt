@@ -1,5 +1,2 @@
-chat ok, form: True
-paises visibles: 
-hay US: False
-errores: []
+scrollY 5210 fin top 5330.40625
 errores movil: []
