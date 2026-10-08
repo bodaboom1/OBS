@@ -1,0 +1,27 @@
+cuenta atras: lfDlRun matrix(1, 0, 0, 1, -3260.56, 0)
+cuenta atras +1.5s: matrix(1, 0, 0, 1, -3260.56, 0)
+tarjetas con galeria: 10
+tarjetas con puntos: 10 CTA: 10
+imagenes por tarjeta: 5/5 6/6 5/5 5/5 5/5 5/5 5/5 5/5 5/5 6/6
+tarjeta1 inicio: {"scroll":0,"w":243,"current":0,"arrows":["off:0","on:0"],"dots":"Xoooo"}
+tarjeta1 hover: {"scroll":0,"w":243,"current":0,"arrows":["off:0","on:1"],"dots":"Xoooo"}
+tarjeta1 tras flecha >: {"scroll":244,"w":243,"current":1,"arrows":["on:1","on:1"],"dots":"oXooo"}
+url: https://ypnmwd-as.myshopify.com/
+tarjeta1 tras punto ultimo: {"scroll":976,"w":243,"current":4,"arrows":["on:1","off:0"],"dots":"ooooX"}
+url: https://ypnmwd-as.myshopify.com/
+tras clic Ver producto: https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
+errores JS escritorio home: []
+ficha inicio: {"scroll":0,"w":883,"current":0,"arrows":["on:0","on:0"],"dots":"Xoooo"}
+miniaturas: 5
+ficha tras miniatura 3: {"scroll":1766,"w":883,"current":2,"arrows":["on:0","on:0"],"dots":"ooXoo"}
+ficha hover: {"scroll":1766,"w":883,"current":2,"arrows":["on:1","on:1"],"dots":"ooXoo"}
+errores JS ficha escritorio: []
+movil tarjeta inicio: {"scroll":0,"w":157,"current":0,"arrows":["off:0","on:0"],"dots":"Xoooo"}
+movil tarjeta tras swipe: {"scroll":0,"w":157,"current":0,"arrows":["off:0","on:0"],"dots":"Xoooo"} scrollY antes/despues: 51 51
+errores JS movil home: []
+movil ficha inicio: {"scroll":0,"w":390,"current":0,"arrows":["on:0","on:0"],"dots":"Xoooo"}
+movil ficha tras swipe: {"scroll":0,"w":390,"current":0,"arrows":["on:0","on:0"],"dots":"Xoooo"}
+toast: lf-toast lf-on
+carrito: 1 items, total 2490 EUR
+errores JS movil ficha: []
+coleccion tarjetas: 7 errores: []
