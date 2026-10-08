@@ -1,0 +1,20 @@
+name: Consultar envios AliExpress
+on:
+  push:
+    branches: [fotos-tienda]
+    paths: [fotos-tienda/envios.py]
+permissions:
+  contents: write
+jobs:
+  envios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: mkdir -p fotos-tienda/envios && python fotos-tienda/envios.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotos-tienda/envios
+          git commit -m "Plazos de envio AliExpress" || echo nada
+          git push
