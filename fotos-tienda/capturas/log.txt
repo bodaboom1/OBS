@@ -1,6 +1,12 @@
-ES {"post":200,"detected":"{\"detected_values\":{\"country_name\":\"Estados Unidos\",\"country\":{\"handle\":\"US\",\"name\":\"Estados Unidos\"}},\"features\":{},\"suggestions\":[]}","available":true,"vavail":"true","price":2490,"add":"200 {\"id\":55219057131857,\"properties\":{},\"quantity\":1,\"variant_id\":55219057131857,\"key\":\"55219057131857:9f79b4e81bfc0ed1e25e4c26fb52cb61\",\"title\":\"Telaraña Gigante ","cart":"1 EUR"}
-ES live boton: Agregar al carrito | html country: ES
 FR {"post":200,"detected":"{\"detected_values\":{\"country_name\":\"Estados Unidos\",\"country\":{\"handle\":\"US\",\"name\":\"Estados Unidos\"}},\"features\":{},\"suggestions\":[]}","available":false,"vavail":"false","price":2490,"add":"422 {\"status\":422,\"message\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\",\"description\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\"}","cart":"0 EUR"}
 FR live boton: No disponible | html country: FR
+FR /collections/halloween 200 5
+FR /collections/navidad 200 7
+FR /collections/mas-vendidos 200 2
+FR /collections/all 200 10
 DE {"post":200,"detected":"{\"detected_values\":{\"country_name\":\"Estados Unidos\",\"country\":{\"handle\":\"US\",\"name\":\"Estados Unidos\"}},\"features\":{},\"suggestions\":[]}","available":false,"vavail":"false","price":2490,"add":"422 {\"status\":422,\"message\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\",\"description\":\"El artículo 'Telaraña Gigante LED' ya está agotado.\"}","cart":"0 EUR"}
 DE live boton: No disponible | html country: DE
+DE /collections/halloween 200 5
+DE /collections/navidad 200 7
+DE /collections/mas-vendidos 200 2
+DE /collections/all 200 10
