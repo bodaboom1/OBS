@@ -29,7 +29,7 @@ async def main():
                 await co.click(); await pg.wait_for_load_state("load"); await pg.wait_for_timeout(9000)
                 L(name,"checkout url:",pg.url)
                 txt=await pg.evaluate("document.body.innerText")
-                L(name,"checkout texto:\n",re.sub(r"\n+","\n",txt)[:2500])
+                
                 await pg.screenshot(path=D+f"{name}_3_checkout.png", full_page=True)
                 if name=="d":
                     async def fill(sel,val):
@@ -43,7 +43,7 @@ async def main():
                     if await z.count(): await z.select_option(label="Madrid")
                     await pg.keyboard.press("Tab"); await pg.wait_for_timeout(8000)
                     txt=await pg.evaluate("document.body.innerText")
-                    L(name,"checkout con direccion:\n",re.sub(r"\n+","\n",txt)[:3500])
+                    i=txt.find("Métodos de envío"); L(name,"ENVIO:\n",re.sub(r"\n+","\n",txt[i:i+400])); j=txt.find("Resumen de costos"); L(name,"COSTES:\n",re.sub(r"\n+","\n",txt[j:j+400]))
                     await pg.screenshot(path=D+f"{name}_4_checkout_dir.png", full_page=True)
             except Exception as e:
                 L(name,"FALLO:",str(e)[:400]); await pg.screenshot(path=D+f"{name}_fallo.png")
