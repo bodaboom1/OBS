@@ -1,7 +1,7 @@
 import asyncio, sys
 from playwright.async_api import async_playwright
 B="https://ypnmwd-as.myshopify.com"
-T="preview_theme_id=207987048785"
+T="preview_theme_id=207987900753"
 COOK=[{"name":"localization","value":"ES","domain":"ypnmwd-as.myshopify.com","path":"/"},{"name":"cart_currency","value":"EUR","domain":"ypnmwd-as.myshopify.com","path":"/"}]
 INIT="try{sessionStorage.setItem('lfIntro','1');localStorage.setItem('lfPop',JSON.stringify({closed:Date.now()}))}catch(e){}"
 CLEAN="document.querySelectorAll('#shopify-pc__banner, .shopify-pc__banner__dialog, #preview-bar-iframe, #PBarNextFrameWrapper').forEach(e=>e.remove())"
