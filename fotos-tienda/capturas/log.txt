@@ -2,7 +2,7 @@ d producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-hal
 d boton: Agregar al carrito
 d carrito: 1 uds, total 25.9 EUR
 d boton pagar: 1
-d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHlslIDOp48QicAWd2NPTM/es-es?_r=AQABJZaoiBRm1rtS0kLMIUN0-jnhf2D6vr2jT8jNk7i991jjNijn&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
+d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHlt0QeAtG623aXPk0jBHc/es-es?_r=AQABBEQC0p1DIlGGhT5GuvC1s78pmCSaw5G-0-pNy72fjeXGurLq&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
 d ES ENVIO:
  Métodos de envío
 Selecciona un método de envío
@@ -62,5 +62,5 @@ m producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-hal
 m boton: Agregar al carrito
 m carrito: 1 uds, total 25.9 EUR
 m boton pagar: 1
-m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHlsq3UeC0O1cgbgcgB61g/es-es?_r=AQABZdaWaZi7FDzASFWtJ7F7yGp5kIcUMDYEO9NTffQGs9iPDTwA&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
+m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHlt59g9Wod6HNSMDpngBk/es-es?_r=AQABdDTwVayolvQm3peQB-p6vRbI_MvANmT6W1iFM-UPr5IF18ov&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
 m errores js: []
