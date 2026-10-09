@@ -1,10 +1,96 @@
-tarjetas:  => 4,8 (308 en AliExpress) |  => 4,6 (494 en AliExpress) |  => 4,8 (86 en AliExpress) |  => 4,7 (155 en AliExpress) |  => 4,9 (136 en AliExpress) |  => 4,9 (351 en AliExpress) |  => 4,8 (312 en AliExpress) |  => 4,5 (183 en AliExpress) |  => 4,5 (3061 en AliExpress) |  => 4,7 (72 en AliExpress)
-demo visible: False
+d lampara-proyectora-de-luna-usb-halloween-y-navidad 
+  img.product-media__image 883x883
+  div.product-media 883x883
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 883x883
+  slideshow-slides. 883x883
+  slideshow-container. 883x883
+  slideshow-component. 883x992
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 883x992
+  div.product-information__media 907x3292
+  product-component.product-information__grid.product-information--media-left 1360x3292
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1440x3308
+  div.shopify-section 1440x3308
+  main.content-for-layout 1440x3921
+  div.page-wrapper 1440x900
+  body.page-width-narrow.card-hover-effect-subtle-zoom 1440x900
 errores: []
-PDP red-de-telarana-led-para-halloween-8-modos | resumen: 4,7 72 opiniones en AliExpress | seccion: 4,7 / 72 valoraciones / barras: 5 ★ 83 %, 4 ★ 10 %, 3 ★ 0 %, 2 ★ 3 %, 1 ★ 4 % / opiniones: 8
+d red-de-telarana-led-para-halloween-8-modos 
+  img.product-media__image 883x883
+  div.product-media 883x883
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 883x883
+  slideshow-slides. 883x883
+  slideshow-container. 883x883
+  slideshow-component. 883x992
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 883x992
+  div.product-information__media 907x3612
+  product-component.product-information__grid.product-information--media-left 1360x3612
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1440x3628
+  div.shopify-section 1440x3628
+  main.content-for-layout 1440x4241
+  div.page-wrapper 1440x900
+  body.page-width-narrow.card-hover-effect-subtle-zoom 1440x900
 errores: []
-PDP ramas-de-abedul-blanco-con-20-luces-led | resumen: 4,5 3061 opiniones en AliExpress | seccion: 4,5 / 3061 valoraciones / barras: 5 ★ 72 %, 4 ★ 14 %, 3 ★ 7 %, 2 ★ 3 %, 1 ★ 4 % / opiniones: 8
+t lampara-proyectora-de-luna-usb-halloween-y-navidad 
+  img.product-media__image 520x520
+  div.product-media 520x520
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 520x520
+  slideshow-slides. 520x520
+  slideshow-container. 520x520
+  slideshow-component. 520x629
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 520x629
+  div.product-information__media 544x3580
+  product-component.product-information__grid.product-information--media-left 944x3580
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1024x3596
+  div.shopify-section 1024x3596
+  main.content-for-layout 1024x4070
+  div.page-wrapper 1024x768
+  body.page-width-narrow.card-hover-effect-subtle-zoom 1024x768
 errores: []
-PDP guirnalda-led-impermeable-para-navidad-1-m | resumen: 4,9 351 opiniones en AliExpress | seccion: 4,9 / 351 valoraciones / barras: 5 ★ 85 %, 4 ★ 11 %, 3 ★ 4 %, 2 ★ 0 %, 1 ★ 0 % / opiniones: 8
+t red-de-telarana-led-para-halloween-8-modos 
+  img.product-media__image 520x520
+  div.product-media 520x520
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 520x520
+  slideshow-slides. 520x520
+  slideshow-container. 520x520
+  slideshow-component. 520x629
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 520x629
+  div.product-information__media 544x3918
+  product-component.product-information__grid.product-information--media-left 944x3918
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1024x3934
+  div.shopify-section 1024x3934
+  main.content-for-layout 1024x4408
+  div.page-wrapper 1024x768
+  body.page-width-narrow.card-hover-effect-subtle-zoom 1024x768
 errores: []
-errores movil: []
+m lampara-proyectora-de-luna-usb-halloween-y-navidad 
+  img.product-media__image 390x390
+  div.product-media 390x390
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 390x390
+  slideshow-slides. 390x390
+  slideshow-container. 390x390
+  slideshow-component. 390x479
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 390x479
+  div.product-information__media 390x479
+  product-component.product-information__grid.product-information--media-left 390x4111
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 390x4127
+  div.shopify-section 390x4127
+  main.content-for-layout 390x4531
+  div.page-wrapper 390x5428
+  body.page-width-narrow.card-hover-effect-subtle-zoom 390x5428
+errores: []
+m red-de-telarana-led-para-halloween-8-modos 
+  img.product-media__image 390x390
+  div.product-media 390x390
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 390x390
+  slideshow-slides. 390x390
+  slideshow-container. 390x390
+  slideshow-component. 390x479
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 390x479
+  div.product-information__media 390x479
+  product-component.product-information__grid.product-information--media-left 390x4347
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 390x4363
+  div.shopify-section 390x4363
+  main.content-for-layout 390x4766
+  div.page-wrapper 390x5664
+  body.page-width-narrow.card-hover-effect-subtle-zoom 390x5664
+errores: []
