@@ -1,33 +1,28 @@
-import asyncio, json
-from playwright.async_api import async_playwright
-B="https://ypnmwd-as.myshopify.com"
-T="preview_theme_id=207963914577"
-COOK=[{"name":"localization","value":"ES","domain":"ypnmwd-as.myshopify.com","path":"/"},{"name":"cart_currency","value":"EUR","domain":"ypnmwd-as.myshopify.com","path":"/"}]
-INIT="try{sessionStorage.setItem('lfIntro','1');localStorage.setItem('lfPop',JSON.stringify({closed:Date.now()}))}catch(e){}"
-CLEAN="document.querySelectorAll('#shopify-pc__banner, .shopify-pc__banner__dialog, #preview-bar-iframe, #PBarNextFrameWrapper').forEach(e=>e.remove())"
+# Descarga reseñas públicas de AliExpress de cada producto (mismo artículo que vende Lumifiesta)
+import json, urllib.request, time, os
+IDS={"telarana":"1005009648924450","calabazas":"1005009496493148","proyector-magico":"1005009835258944","brujas":"1005009711974697","otono":"1005003253140615","micro":"1005010089232181","ramas":"1005006511511206","bolas":"1005007767236069","cinta":"1005009635702053","nevada":"1005006207241570"}
 D="fotos-tienda/capturas/"
-CARDS="""()=>[...document.querySelectorAll('product-card')].map(c=>{const t=(c.querySelector('.contents, [class*=product-title]')||{}).innerText||'';return JSON.stringify({t:t.trim().slice(0,40),price:((c.querySelector('product-price .price')||{}).innerText||'').trim(),cap:((c.querySelector('.compare-at-price')||{}).innerText||'').trim(),ref:((c.querySelector('.lf-ref')||{}).innerText||'').replace(/\\s+/g,' ').trim(),badges:((c.querySelector('.product-badges')||{}).innerText||'').replace(/\\s+/g,' ').trim(),pct:/%/.test(c.innerText)})})"""
-async def ctxp(b,w,h,touch=False):
-    ctx=await b.new_context(viewport={"width":w,"height":h}, locale="es-ES", has_touch=touch, is_mobile=touch)
-    await ctx.add_cookies(COOK); await ctx.add_init_script(INIT)
-    pg=await ctx.new_page(); errs=[]; pg.on("pageerror", lambda e: errs.append(str(e)[:200]))
-    return ctx,pg,errs
-async def go(pg,url):
-    await pg.goto(url, timeout=90000, wait_until="load"); await pg.wait_for_timeout(4500); await pg.evaluate(CLEAN)
-async def main():
-    log=open(D+"log.txt","w")
-    def L(*a): log.write(" ".join(str(x) for x in a)+"\n"); log.flush()
-    async with async_playwright() as p:
-        b=await p.chromium.launch()
-        ctx,pg,errs=await ctxp(b,390,844,True); await go(pg,B+"/collections/all?"+T)
-        y=await pg.evaluate("document.querySelector('product-card').getBoundingClientRect().top+window.scrollY")
-        await pg.evaluate(f"window.scrollTo(0,{y}-70)"); await pg.wait_for_timeout(1000)
-        await pg.screenshot(path=D+"m_tarjetas.png")
-        L("ref movil alturas:",await pg.evaluate("[...document.querySelectorAll('.lf-ref')].slice(0,4).map(e=>Math.round(e.getBoundingClientRect().height)+'px '+e.innerText.replace(/\\s+/g,' ')).join(' | ')"))
-        await go(pg,B+"/products/red-de-telarana-led-para-halloween-8-modos?"+T)
-        y=await pg.evaluate("document.querySelector('.lf-tiers').getBoundingClientRect().top+window.scrollY")
-        await pg.evaluate(f"window.scrollTo(0,{y}-200)"); await pg.wait_for_timeout(800); await pg.screenshot(path=D+"m_ficha.png")
-        L("tier1 deco:",await pg.evaluate("getComputedStyle(document.querySelector('.lf-tier span.lf-tier__old')).textDecorationLine"))
-        L("errores:",errs)
-        await b.close()
-asyncio.run(main())
+log=open(D+"log.txt","w")
+H={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36","Accept":"application/json, text/plain, */*","Referer":"https://www.aliexpress.com/"}
+out={}
+for k,pid in IDS.items():
+    revs=[];info={}
+    for page in range(1,6):
+        url=f"https://feedback.aliexpress.com/pc/searchEvaluation.do?productId={pid}&lang=es_ES&country=ES&page={page}&pageSize=20&filter=all&sort=complex_default"
+        try:
+            r=urllib.request.urlopen(urllib.request.Request(url,headers=H),timeout=30).read().decode("utf-8","ignore")
+            j=json.loads(r)
+        except Exception as e:
+            log.write(f"{k} p{page} ERROR {str(e)[:150]}\n"); break
+        d=j.get("data") or {}
+        if page==1:
+            info={kk:d.get(kk) for kk in ["productEvaluationStatistic","totalNum","totalPage"]}
+        lst=d.get("evaViewList") or []
+        revs+=lst
+        if len(lst)<20: break
+        time.sleep(1.5)
+    out[k]={"id":pid,"info":info,"reviews":revs}
+    st=(info.get("productEvaluationStatistic") or {})
+    log.write(f"{k} {pid}: total={info.get('totalNum')} media={st.get('evarageStar') or st.get('averageStar')} descargadas={len(revs)}\n")
+    log.flush()
+json.dump(out,open(D+"aliexpress-resenas.json","w"),ensure_ascii=False,indent=1)
