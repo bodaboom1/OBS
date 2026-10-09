@@ -18,17 +18,21 @@ async def go(pg,url):
 async def main():
     log=open(D+"log.txt","w")
     def L(*a): log.write(" ".join(str(x) for x in a)+"\n"); log.flush()
+    INFO="""(()=>{const g=document.querySelector('.product-information__media>media-gallery');const r=g.getBoundingClientRect();const h=document.querySelector('header, .header-section, #header-group, .header')?.getBoundingClientRect();const imgs=[...document.querySelectorAll('.product-information__media img.product-media__image')].slice(0,9).map(i=>i.naturalWidth+'x'+i.naturalHeight+' fit:'+getComputedStyle(i).objectFit);return 'gallery top='+Math.round(r.top)+' bottom='+Math.round(r.bottom)+' | header bottom='+(h?Math.round(h.bottom):'?')+' | imgs '+imgs.join(', ')})()"""
     async with async_playwright() as p:
         b=await p.chromium.launch()
-        for name,w,h,touch in [("d",1440,900,False),("t",1024,768,True),("m",390,844,True)]:
-            for prod in ["lampara-proyectora-de-luna-usb-halloween-y-navidad","red-de-telarana-led-para-halloween-8-modos"]:
+        for name,w,h,touch in [("d",1440,900,False),("m",390,844,True)]:
+            for prod in ["lampara-proyectora-de-luna-usb-halloween-y-navidad","ramas-de-abedul-blanco-con-20-luces-led"]:
                 ctx,pg,errs=await ctxp(b,w,h,touch); await go(pg,B+"/products/"+prod+"?"+T)
-                L(name,prod,"\n  "+await pg.evaluate(DOM))
-                await pg.screenshot(path=D+f"{name}_{prod[:6]}.png")
-                if name=="m":
-                    await pg.evaluate("document.querySelector('.product-information__media slideshow-arrows button:last-child, button[on\\\\:click*=next]')?.click()"); await pg.mouse.move(195,330)
-                    await pg.touchscreen.tap(330,330) if False else None
-                L("recs:",await pg.evaluate("(document.querySelector('.product-recommendations h3, product-recommendations h3')||{innerText:'-'}).innerText"))
+                L(name,prod,"top:",await pg.evaluate(INFO))
+                for y in [250,600]:
+                    if name=="d":
+                        await pg.mouse.move(700,500); await pg.mouse.wheel(0,y if y==250 else 350)
+                    else:
+                        await pg.evaluate(f"window.scrollTo(0,{y})")
+                    await pg.wait_for_timeout(1200)
+                    L(name,prod,"scroll",y,await pg.evaluate(INFO))
+                    await pg.screenshot(path=D+f"{name}_{prod[:6]}_s{y}.png")
                 L("errores:",errs); await ctx.close()
         await b.close()
 asyncio.run(main())
