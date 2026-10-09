@@ -8,7 +8,7 @@ En esta carpeta hay 3 archivos listos para subir de golpe a tu campaña:
 | `2-anuncios.csv` | 10 anuncios adaptables de búsqueda (uno por grupo): hasta 15 títulos y 4 descripciones cada uno, ya revisados con los límites de Google |
 | `3-negativas.csv` | 39 palabras clave negativas para no pagar clics inútiles («gratis», «segunda mano», «manualidades», «aliexpress», «amazon»…) |
 
-Todo lo que dicen los anuncios es real: precios actuales, envío gratis desde 25 €, devolución en 14 días, garantía de 3 años, −10 % llevando 2 y −15 % llevando 3, y el código HALLOWEEN15 (válido hasta el 31 de octubre). No hay descuentos inventados.
+Todo lo que dicen los anuncios es real y coincide con la tienda: precios actuales, envío gratis desde 25 €, pedido con seguimiento, devolución en 14 días, garantía de 3 años y precio por unidad más bajo llevando 2 o 3. Igual que en la web, los anuncios no anuncian porcentajes ni códigos de descuento.
 
 ---
 
@@ -47,20 +47,20 @@ Si prefieres Google Ads Editor (programa gratuito): **Cuenta → Importar → De
 
 | Texto (máx. 25) | Descripción 1 | Descripción 2 | URL |
 |---|---|---|---|
-| Decoración Halloween | Telarañas, luces y guirnaldas | −15 % con HALLOWEEN15 | `https://ypnmwd-as.myshopify.com/collections/halloween` |
+| Decoración Halloween | Telarañas, luces y guirnaldas | Entrega en 8-15 días | `https://ypnmwd-as.myshopify.com/collections/halloween` |
 | Decoración Navidad | Proyectores, ramas y luces | Pide antes del 3 de diciembre | `https://ypnmwd-as.myshopify.com/collections/navidad` |
 | Regalos hasta 15 € | Detalles con luz para regalar | Envío gratis desde 25 € | `https://ypnmwd-as.myshopify.com/collections/regalos-por-menos-de-15` |
 | Nuestros favoritos | Telaraña y Proyector Mágico | Los más elegidos de la tienda | `https://ypnmwd-as.myshopify.com/collections/mas-vendidos` |
 
 **Textos destacados** (máx. 25 caracteres cada uno):
-`Envío gratis desde 25 €` · `Devolución en 14 días` · `Garantía de 3 años` · `−15 % llevando 3` · `Pago 100 % seguro` · `Seguimiento del pedido`
+`Envío gratis desde 25 €` · `Devolución en 14 días` · `Garantía de 3 años` · `Mejor precio llevando 3` · `Pago 100 % seguro` · `Seguimiento del pedido`
 
 **Fragmento estructurado**, con el encabezado «Tipos»:
 `Telarañas LED` · `Proyectores` · `Guirnaldas` · `Ramas luminosas` · `Luces de hada`
 
 ## 5. Fechas importantes (no te las saltes)
 
-- **11 de octubre: pausa los grupos «Telaraña LED Halloween», «Luces Halloween» y «Guirnalda Calabazas».** Con 8–15 días laborables de entrega, lo que se pida después del 10 de octubre ya no llega para Halloween, y los anuncios dicen «Pídela antes del 10/10». El código HALLOWEEN15 sigue valiendo hasta el 31, pero prometer la llegada a tiempo sería falso.
+- **11 de octubre: pausa los grupos «Telaraña LED Halloween», «Luces Halloween» y «Guirnalda Calabazas».** Con 8–15 días laborables de entrega, lo que se pida después del 10 de octubre ya no llega a tiempo para Halloween, así que no merece la pena pagar esos clics.
 - **Del 11 de octubre en adelante**, mete el presupuesto en los grupos de **Navidad**: Proyector Nevada, Proyector Mágico, Ramas, Bolas de Nieve, Cinta y Micro Luces.
 - **3 de diciembre:** último día para que llegue antes de Navidad. A partir del 4, cambia «Pídelo antes del 3/12» por otro título o pausa esos anuncios.
 
