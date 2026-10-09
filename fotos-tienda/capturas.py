@@ -25,6 +25,10 @@ async def main():
                 ctx,pg,errs=await ctxp(b,w,h,touch); await go(pg,B+"/products/"+prod+"?"+T)
                 L(name,prod,"\n  "+await pg.evaluate(DOM))
                 await pg.screenshot(path=D+f"{name}_{prod[:6]}.png")
+                if name=="m":
+                    await pg.evaluate("document.querySelector('.product-information__media slideshow-arrows button:last-child, button[on\\\\:click*=next]')?.click()"); await pg.mouse.move(195,330)
+                    await pg.touchscreen.tap(330,330) if False else None
+                L("recs:",await pg.evaluate("(document.querySelector('.product-recommendations h3, product-recommendations h3')||{innerText:'-'}).innerText"))
                 L("errores:",errs); await ctx.close()
         await b.close()
 asyncio.run(main())
