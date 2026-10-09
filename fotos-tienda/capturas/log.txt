@@ -1,67 +1,46 @@
-https://mylumifiestastore.myshopify.com/
-  301 -> https://lumifiesta.com/ | ssl_verify=0 
-  * Connected to mylumifiestastore.myshopify.com (23.227.38.74) port 443
-  * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
-  *  subject: CN=*.myshopify.com
-  *  subjectAltName: host "mylumifiestastore.myshopify.com" matched cert's "*.myshopify.com"
-  *  issuer: C=US; O=Let's Encrypt; CN=YE1
-  *  SSL certificate verify ok.
-  * using HTTP/2
-  * [HTTP/2] [1] OPENED stream for https://mylumifiestastore.myshopify.com/
-  * [HTTP/2] [1] [:method: GET]
-  * [HTTP/2] [1] [:scheme: https]
-  * [HTTP/2] [1] [:authority: mylumifiestastore.myshopify.com]
-  * [HTTP/2] [1] [:path: /]
-  * [HTTP/2] [1] [user-agent: curl/8.5.0]
-  * [HTTP/2] [1] [accept: */*]
-  > GET / HTTP/2
-  * old SSL session ID is stale, removing
-  < HTTP/2 301 
-  < location: https://lumifiesta.com/
-https://ypnmwd-as.myshopify.com/
-  301 -> https://lumifiesta.com/ | ssl_verify=0 
-  * Connected to ypnmwd-as.myshopify.com (23.227.38.74) port 443
-  * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
-  *  subject: CN=*.myshopify.com
-  *  subjectAltName: host "ypnmwd-as.myshopify.com" matched cert's "*.myshopify.com"
-  *  issuer: C=US; O=Let's Encrypt; CN=YE1
-  *  SSL certificate verify ok.
-  * using HTTP/2
-  * [HTTP/2] [1] OPENED stream for https://ypnmwd-as.myshopify.com/
-  * [HTTP/2] [1] [:method: GET]
-  * [HTTP/2] [1] [:scheme: https]
-  * [HTTP/2] [1] [:authority: ypnmwd-as.myshopify.com]
-  * [HTTP/2] [1] [:path: /]
-  * [HTTP/2] [1] [user-agent: curl/8.5.0]
-  * [HTTP/2] [1] [accept: */*]
-  > GET / HTTP/2
-  * old SSL session ID is stale, removing
-  < HTTP/2 301 
-  < location: https://lumifiesta.com/
-https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
-  301 -> https://lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos | ssl_verify=0 
-  * Connected to ypnmwd-as.myshopify.com (23.227.38.74) port 443
-  * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
-  *  subject: CN=*.myshopify.com
-  *  subjectAltName: host "ypnmwd-as.myshopify.com" matched cert's "*.myshopify.com"
-  *  issuer: C=US; O=Let's Encrypt; CN=YE1
-  *  SSL certificate verify ok.
-  * using HTTP/2
-  * [HTTP/2] [1] OPENED stream for https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
-  * [HTTP/2] [1] [:method: GET]
-  * [HTTP/2] [1] [:scheme: https]
-  * [HTTP/2] [1] [:authority: ypnmwd-as.myshopify.com]
-  * [HTTP/2] [1] [:path: /products/red-de-telarana-led-para-halloween-8-modos]
-  * [HTTP/2] [1] [user-agent: curl/8.5.0]
-  * [HTTP/2] [1] [accept: */*]
-  > GET /products/red-de-telarana-led-para-halloween-8-modos HTTP/2
-  * old SSL session ID is stale, removing
-  < HTTP/2 301 
-  < location: https://lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos
-http://mylumifiestastore.myshopify.com/
-  301 -> https://mylumifiestastore.myshopify.com/ | ssl_verify=0 
-  * Connected to mylumifiestastore.myshopify.com (23.227.38.74) port 80
-  > GET / HTTP/1.1
-  < HTTP/1.1 301 Moved Permanently
-mylumifiestastore.myshopify.com DNS: shops.myshopify.com. 23.227.38.74 
-ypnmwd-as.myshopify.com DNS: shops.myshopify.com. 23.227.38.74 
+lumifiesta.com A: 23.227.38.32
+lumifiesta.com AAAA: 2620:127:f00f:3::
+lumifiesta.com CNAME: 
+lumifiesta.com NS: ns-cloud-b1.googledomains.com. ns-cloud-b2.googledomains.com. ns-cloud-b3.googledomains.com. ns-cloud-b4.googledomains.com.
+lumifiesta.com CAA: 
+lumifiesta.com whois/NS @8.8.8.8: ns-cloud-b3.googledomains.com. ns-cloud-b4.googledomains.com. ns-cloud-b1.googledomains.com. ns-cloud-b2.googledomains.com.
+www.lumifiesta.com A: shops.myshopify.com. 23.227.38.74
+www.lumifiesta.com AAAA: shops.myshopify.com. 2620:127:f00f:e::
+www.lumifiesta.com CNAME: shops.myshopify.com.
+www.lumifiesta.com NS: shops.myshopify.com.
+www.lumifiesta.com CAA: shops.myshopify.com. 0 issue "digicert.com" 0 issue "globalsign.com" 0 issue "letsencrypt.org" 0 issue "pki.goog" 0 issue "ssl.com"
+www.lumifiesta.com whois/NS @8.8.8.8: shops.myshopify.com.
+https://lumifiesta.com/
+  * Connected to lumifiesta.com (23.227.38.32) port 443
+  * TLSv1.3 (IN), TLS alert, handshake failure (552):
+  * OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure
+  curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure
+https://www.lumifiesta.com/
+  * Connected to www.lumifiesta.com (23.227.38.74) port 443
+  * TLSv1.3 (IN), TLS alert, handshake failure (552):
+  * OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure
+  curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure
+http://lumifiesta.com/
+  * Connected to lumifiesta.com (23.227.38.32) port 80
+  < HTTP/1.1 409 Conflict
+http://www.lumifiesta.com/
+  * Connected to www.lumifiesta.com (23.227.38.74) port 80
+  < HTTP/1.1 409 Conflict
+openssl: 40B7C67C277F0000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:../ssl/record/rec_layer_s3.c:1599:SSL alert number 40
+CONNECTED(00000003)
+---
+no peer certificate available
+---
+No client certificate CA names sent
+---
+SSL handshake has read 7 bytes and written 316 bytes
+Verification: OK
+---
+New, (NONE), Cipher is (NONE)
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
