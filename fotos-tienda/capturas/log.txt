@@ -1,10 +1,10 @@
-telarana 1005009648924450: total=70 media=4.7 descargadas=70
-calabazas 1005009496493148: total=85 media=4.8 descargadas=85
-proyector-magico 1005009835258944: total=294 media=4.8 descargadas=100
-brujas 1005009711974697: total=132 media=4.9 descargadas=100
-otono 1005003253140615: total=154 media=4.7 descargadas=100
-micro 1005010089232181: total=351 media=4.9 descargadas=100
-ramas 1005006511511206: total=3045 media=4.5 descargadas=100
-bolas 1005007767236069: total=494 media=4.6 descargadas=100
-cinta 1005009635702053: total=308 media=4.8 descargadas=100
-nevada 1005006207241570: total=183 media=4.5 descargadas=100
+tarjetas:  => 4,8 (308 en AliExpress) |  => 4,6 (494 en AliExpress) |  => 4,8 (86 en AliExpress) |  => 4,7 (155 en AliExpress) |  => 4,9 (136 en AliExpress) |  => 4,9 (351 en AliExpress) |  => 4,8 (312 en AliExpress) |  => 4,5 (183 en AliExpress) |  => 4,5 (3061 en AliExpress) |  => 4,7 (72 en AliExpress)
+demo visible: False
+errores: []
+PDP red-de-telarana-led-para-halloween-8-modos | resumen: 4,7 72 opiniones en AliExpress | seccion: 4,7 / 72 valoraciones / barras: 5 ★ 83 %, 4 ★ 10 %, 3 ★ 0 %, 2 ★ 3 %, 1 ★ 4 % / opiniones: 8
+errores: []
+PDP ramas-de-abedul-blanco-con-20-luces-led | resumen: 4,5 3061 opiniones en AliExpress | seccion: 4,5 / 3061 valoraciones / barras: 5 ★ 72 %, 4 ★ 14 %, 3 ★ 7 %, 2 ★ 3 %, 1 ★ 4 % / opiniones: 8
+errores: []
+PDP guirnalda-led-impermeable-para-navidad-1-m | resumen: 4,9 351 opiniones en AliExpress | seccion: 4,9 / 351 valoraciones / barras: 5 ★ 85 %, 4 ★ 11 %, 3 ★ 4 %, 2 ★ 0 %, 1 ★ 0 % / opiniones: 8
+errores: []
+errores movil: []
