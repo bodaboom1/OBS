@@ -1,96 +1,102 @@
 d lampara-proyectora-de-luna-usb-halloween-y-navidad 
-  img.product-media__image 883x883
-  div.product-media 883x883
-  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 883x883
-  slideshow-slides. 883x883
-  slideshow-container. 883x883
-  slideshow-component. 883x992
-  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 883x992
-  div.product-information__media 907x3292
-  product-component.product-information__grid.product-information--media-left 1360x3292
-  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1440x3308
-  div.shopify-section 1440x3308
-  main.content-for-layout 1440x3921
+  img.product-media__image 520x520
+  div.product-media 520x520
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 520x520
+  slideshow-slides. 520x520
+  slideshow-container. 520x520
+  slideshow-component. 520x629
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 520x629
+  div.product-information__media 680x2995
+  product-component.product-information__grid.product-information--media-left.product-information__grid--half 1440x2995
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1440x3011
+  div.shopify-section 1440x3011
+  main.content-for-layout 1440x3624
   div.page-wrapper 1440x900
   body.page-width-narrow.card-hover-effect-subtle-zoom 1440x900
+recs: Completa tu pedido
 errores: []
 d red-de-telarana-led-para-halloween-8-modos 
-  img.product-media__image 883x883
-  div.product-media 883x883
-  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 883x883
-  slideshow-slides. 883x883
-  slideshow-container. 883x883
-  slideshow-component. 883x992
-  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 883x992
-  div.product-information__media 907x3612
-  product-component.product-information__grid.product-information--media-left 1360x3612
-  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1440x3628
-  div.shopify-section 1440x3628
-  main.content-for-layout 1440x4241
+  img.product-media__image 520x520
+  div.product-media 520x520
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 520x520
+  slideshow-slides. 520x520
+  slideshow-container. 520x520
+  slideshow-component. 520x629
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 520x629
+  div.product-information__media 680x3226
+  product-component.product-information__grid.product-information--media-left.product-information__grid--half 1440x3226
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1440x3242
+  div.shopify-section 1440x3242
+  main.content-for-layout 1440x3855
   div.page-wrapper 1440x900
   body.page-width-narrow.card-hover-effect-subtle-zoom 1440x900
+recs: Completa tu pedido
 errores: []
 t lampara-proyectora-de-luna-usb-halloween-y-navidad 
-  img.product-media__image 520x520
-  div.product-media 520x520
-  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 520x520
-  slideshow-slides. 520x520
-  slideshow-container. 520x520
-  slideshow-component. 520x629
-  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 520x629
-  div.product-information__media 544x3580
-  product-component.product-information__grid.product-information--media-left 944x3580
-  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1024x3596
-  div.shopify-section 1024x3596
-  main.content-for-layout 1024x4070
+  img.product-media__image 448x448
+  div.product-media 448x448
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 448x448
+  slideshow-slides. 448x448
+  slideshow-container. 448x448
+  slideshow-component. 448x557
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 448x557
+  div.product-information__media 472x3282
+  product-component.product-information__grid.product-information--media-left.product-information__grid--half 1024x3282
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1024x3298
+  div.shopify-section 1024x3298
+  main.content-for-layout 1024x3772
   div.page-wrapper 1024x768
   body.page-width-narrow.card-hover-effect-subtle-zoom 1024x768
+recs: Completa tu pedido
 errores: []
 t red-de-telarana-led-para-halloween-8-modos 
-  img.product-media__image 520x520
-  div.product-media 520x520
-  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 520x520
-  slideshow-slides. 520x520
-  slideshow-container. 520x520
-  slideshow-component. 520x629
-  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 520x629
-  div.product-information__media 544x3918
-  product-component.product-information__grid.product-information--media-left 944x3918
-  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1024x3934
-  div.shopify-section 1024x3934
-  main.content-for-layout 1024x4408
+  img.product-media__image 448x448
+  div.product-media 448x448
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 448x448
+  slideshow-slides. 448x448
+  slideshow-container. 448x448
+  slideshow-component. 448x557
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 448x557
+  div.product-information__media 472x3556
+  product-component.product-information__grid.product-information--media-left.product-information__grid--half 1024x3556
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 1024x3572
+  div.shopify-section 1024x3572
+  main.content-for-layout 1024x4046
   div.page-wrapper 1024x768
   body.page-width-narrow.card-hover-effect-subtle-zoom 1024x768
+recs: Completa tu pedido
 errores: []
 m lampara-proyectora-de-luna-usb-halloween-y-navidad 
-  img.product-media__image 390x390
-  div.product-media 390x390
-  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 390x390
-  slideshow-slides. 390x390
-  slideshow-container. 390x390
-  slideshow-component. 390x479
-  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 390x479
-  div.product-information__media 390x479
-  product-component.product-information__grid.product-information--media-left 390x4111
-  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 390x4127
-  div.shopify-section 390x4127
-  main.content-for-layout 390x4531
-  div.page-wrapper 390x5428
-  body.page-width-narrow.card-hover-effect-subtle-zoom 390x5428
+  img.product-media__image 289x289
+  div.product-media 289x289
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 289x289
+  slideshow-slides. 289x289
+  slideshow-container. 390x299
+  slideshow-component. 390x388
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 390x388
+  div.product-information__media 390x388
+  product-component.product-information__grid.product-information--media-left.product-information__grid--half 390x4020
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 390x4036
+  div.shopify-section 390x4036
+  main.content-for-layout 390x4404
+  div.page-wrapper 390x5302
+  body.page-width-narrow.card-hover-effect-subtle-zoom 390x5302
+recs: Completa tu pedido
 errores: []
 m red-de-telarana-led-para-halloween-8-modos 
-  img.product-media__image 390x390
-  div.product-media 390x390
-  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 390x390
-  slideshow-slides. 390x390
-  slideshow-container. 390x390
-  slideshow-component. 390x479
-  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 390x479
-  div.product-information__media 390x479
-  product-component.product-information__grid.product-information--media-left 390x4347
-  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 390x4363
-  div.shopify-section 390x4363
-  main.content-for-layout 390x4766
-  div.page-wrapper 390x5664
-  body.page-width-narrow.card-hover-effect-subtle-zoom 390x5664
+  img.product-media__image 289x289
+  div.product-media 289x289
+  slideshow-slide.product-media-container.media-fit-cover.product-media-container--image.product-media-container--zoomable 289x289
+  slideshow-slides. 289x289
+  slideshow-container. 390x299
+  slideshow-component. 390x388
+  media-gallery.spacing-style.sticky-content.media-gallery--carousel.lf-pdp-gallery 390x388
+  div.product-information__media 390x388
+  product-component.product-information__grid.product-information--media-left.product-information__grid--half 390x4256
+  div.product-information.section.section--page-width.spacing-style.color-custom-template--32547897475409__main.relative 390x4272
+  div.shopify-section 390x4272
+  main.content-for-layout 390x4640
+  div.page-wrapper 390x5538
+  body.page-width-narrow.card-hover-effect-subtle-zoom 390x5538
+recs: Completa tu pedido
 errores: []
