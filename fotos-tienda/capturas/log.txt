@@ -2,7 +2,7 @@ d producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-hal
 d boton: Agregar al carrito
 d carrito: 1 uds, total 25.9 EUR
 d boton pagar: 1
-d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltMJN8lHM6odZpDbQpbc/es-es?_r=AQAB0shmQkTcgQwC1UCwP1iiIqYbfXl9nbsRCjEQ5yYlwAvrkCt6&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
+d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltiauqqM7SbvbYtVav96/es-es?_r=AQABzBtLc0IhxAoMuRorGVhgpQasaq648tiwVSGtJZEerWBmiMG8&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
 d ES ENVIO:
  Métodos de envío
 Selecciona un método de envío
@@ -50,10 +50,11 @@ Abre sitio externo externo en una nueva ventana.
 Abre en una nueva ventana.
 Abre sitio externo.
 Método de envío actualizado: Estándar
+d IMPUESTOS: []
 d errores js: []
 m producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos
 m boton: Agregar al carrito
 m carrito: 1 uds, total 25.9 EUR
 m boton pagar: 1
-m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltRI2igBfYdksJyJUZGS/es-es?_r=AQABx-QpmXreyiIUdU4wlTx7Ncwwea9dNW8kCZVzLbWXBvcAeAk-&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
+m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltnDqSys8XfY9m8VT6Yi/es-es?_r=AQABEaJCuDApLfQklbWIAzwPn7YPeBu8yz0CdYVTkSoYDO1HY3Ki&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
 m errores js: []
