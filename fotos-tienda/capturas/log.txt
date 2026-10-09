@@ -1,10 +1,67 @@
-d FALLO: Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://mylumifiestastore.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
-Call log:
-  - navigating to "https://mylumifiestastore.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos", waiting until "load"
-
-d errores js: []
-m FALLO: Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://mylumifiestastore.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
-Call log:
-  - navigating to "https://mylumifiestastore.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos", waiting until "load"
-
-m errores js: []
+https://mylumifiestastore.myshopify.com/
+  301 -> https://lumifiesta.com/ | ssl_verify=0 
+  * Connected to mylumifiestastore.myshopify.com (23.227.38.74) port 443
+  * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+  *  subject: CN=*.myshopify.com
+  *  subjectAltName: host "mylumifiestastore.myshopify.com" matched cert's "*.myshopify.com"
+  *  issuer: C=US; O=Let's Encrypt; CN=YE1
+  *  SSL certificate verify ok.
+  * using HTTP/2
+  * [HTTP/2] [1] OPENED stream for https://mylumifiestastore.myshopify.com/
+  * [HTTP/2] [1] [:method: GET]
+  * [HTTP/2] [1] [:scheme: https]
+  * [HTTP/2] [1] [:authority: mylumifiestastore.myshopify.com]
+  * [HTTP/2] [1] [:path: /]
+  * [HTTP/2] [1] [user-agent: curl/8.5.0]
+  * [HTTP/2] [1] [accept: */*]
+  > GET / HTTP/2
+  * old SSL session ID is stale, removing
+  < HTTP/2 301 
+  < location: https://lumifiesta.com/
+https://ypnmwd-as.myshopify.com/
+  301 -> https://lumifiesta.com/ | ssl_verify=0 
+  * Connected to ypnmwd-as.myshopify.com (23.227.38.74) port 443
+  * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+  *  subject: CN=*.myshopify.com
+  *  subjectAltName: host "ypnmwd-as.myshopify.com" matched cert's "*.myshopify.com"
+  *  issuer: C=US; O=Let's Encrypt; CN=YE1
+  *  SSL certificate verify ok.
+  * using HTTP/2
+  * [HTTP/2] [1] OPENED stream for https://ypnmwd-as.myshopify.com/
+  * [HTTP/2] [1] [:method: GET]
+  * [HTTP/2] [1] [:scheme: https]
+  * [HTTP/2] [1] [:authority: ypnmwd-as.myshopify.com]
+  * [HTTP/2] [1] [:path: /]
+  * [HTTP/2] [1] [user-agent: curl/8.5.0]
+  * [HTTP/2] [1] [accept: */*]
+  > GET / HTTP/2
+  * old SSL session ID is stale, removing
+  < HTTP/2 301 
+  < location: https://lumifiesta.com/
+https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
+  301 -> https://lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos | ssl_verify=0 
+  * Connected to ypnmwd-as.myshopify.com (23.227.38.74) port 443
+  * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+  *  subject: CN=*.myshopify.com
+  *  subjectAltName: host "ypnmwd-as.myshopify.com" matched cert's "*.myshopify.com"
+  *  issuer: C=US; O=Let's Encrypt; CN=YE1
+  *  SSL certificate verify ok.
+  * using HTTP/2
+  * [HTTP/2] [1] OPENED stream for https://ypnmwd-as.myshopify.com/products/red-de-telarana-led-para-halloween-8-modos
+  * [HTTP/2] [1] [:method: GET]
+  * [HTTP/2] [1] [:scheme: https]
+  * [HTTP/2] [1] [:authority: ypnmwd-as.myshopify.com]
+  * [HTTP/2] [1] [:path: /products/red-de-telarana-led-para-halloween-8-modos]
+  * [HTTP/2] [1] [user-agent: curl/8.5.0]
+  * [HTTP/2] [1] [accept: */*]
+  > GET /products/red-de-telarana-led-para-halloween-8-modos HTTP/2
+  * old SSL session ID is stale, removing
+  < HTTP/2 301 
+  < location: https://lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos
+http://mylumifiestastore.myshopify.com/
+  301 -> https://mylumifiestastore.myshopify.com/ | ssl_verify=0 
+  * Connected to mylumifiestastore.myshopify.com (23.227.38.74) port 80
+  > GET / HTTP/1.1
+  < HTTP/1.1 301 Moved Permanently
+mylumifiestastore.myshopify.com DNS: shops.myshopify.com. 23.227.38.74 
+ypnmwd-as.myshopify.com DNS: shops.myshopify.com. 23.227.38.74 
