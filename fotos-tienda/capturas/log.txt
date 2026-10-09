@@ -2,27 +2,24 @@ d producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-hal
 d boton: Agregar al carrito
 d carrito: 1 uds, total 25.9 EUR
 d boton pagar: 1
-d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHlt0QeAtG623aXPk0jBHc/es-es?_r=AQABBEQC0p1DIlGGhT5GuvC1s78pmCSaw5G-0-pNy72fjeXGurLq&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
+d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltMJN8lHM6odZpDbQpbc/es-es?_r=AQAB0shmQkTcgQwC1UCwP1iiIqYbfXl9nbsRCjEQ5yYlwAvrkCt6&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
 d ES ENVIO:
  Métodos de envío
 Selecciona un método de envío
 Estándar
-3 a 5 días hábiles
-Precio original
-6,99 €
-Precio rebajado
+8 a 15 días hábiles
 GRATIS
 Pago
 Todas las transacciones son seguras y están encriptadas.
-Tarjeta de c
+Tarjeta de crédito
++2
+Número de tarjeta
+Fecha de v
 d FR ENVIO:
  Métodos de envío
 Selecciona un método de envío
 Estándar
-3 a 5 días hábiles
-Precio original
-6,99 €
-Precio rebajado
+8 a 15 días hábiles
 GRATIS
 Pago
 Todas las transacciones son seguras y están encriptadas.
@@ -35,7 +32,9 @@ Nombre del titular como aparece en la tarjeta
 Usar la dirección de envío como dirección de facturación
 PayPal
 Klarna
-Agre
+Agregar descuento
+Recordarme
+Guardar mi in
 d COSTES:
  Resumen de costos
 Artículo
@@ -43,16 +42,10 @@ Valor
 Subtotal
 25,90 €
 Envío
-Precio original
-6,99 €
-Precio rebajado
 GRATIS
-ENVÍO GRATIS DESDE 25 €
 Total
 EUR
 25,90 €
-AHORRO TOTAL
-6,99 €
 Abre sitio externo externo en una nueva ventana.
 Abre en una nueva ventana.
 Abre sitio externo.
@@ -62,5 +55,5 @@ m producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-hal
 m boton: Agregar al carrito
 m carrito: 1 uds, total 25.9 EUR
 m boton pagar: 1
-m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHlt59g9Wod6HNSMDpngBk/es-es?_r=AQABdDTwVayolvQm3peQB-p6vRbI_MvANmT6W1iFM-UPr5IF18ov&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
+m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltRI2igBfYdksJyJUZGS/es-es?_r=AQABx-QpmXreyiIUdU4wlTx7Ncwwea9dNW8kCZVzLbWXBvcAeAk-&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
 m errores js: []
