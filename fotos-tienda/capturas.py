@@ -49,7 +49,7 @@ async def main():
                     await fill("input[name=address1]","10 Rue de Rivoli"); await fill("input[name=postalCode]","75004"); await fill("input[name=city]","Paris")
                     await pg.keyboard.press("Tab"); await pg.wait_for_timeout(8000)
                     txt=await pg.evaluate("document.body.innerText")
-                    i=txt.find("Métodos de envío"); L(name,"FR ENVIO:\n",re.sub(r"\n+","\n",txt[i:i+400])); j=txt.find("Resumen de costos"); L(name,"COSTES:\n",re.sub(r"\n+","\n",txt[j:j+400]))
+                    i=txt.find("Métodos de envío"); L(name,"FR ENVIO:\n",re.sub(r"\n+","\n",txt[i:i+400])); j=txt.find("Resumen de costos"); L(name,"COSTES:\n",re.sub(r"\n+","\n",txt[j:j+500])); L(name,"IMPUESTOS:",[l for l in txt.splitlines() if "mpuesto" in l or "IVA" in l])
                     await pg.screenshot(path=D+f"{name}_4_checkout_dir.png", full_page=True)
             except Exception as e:
                 L(name,"FALLO:",str(e)[:400]); await pg.screenshot(path=D+f"{name}_fallo.png")
