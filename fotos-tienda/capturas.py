@@ -42,8 +42,14 @@ async def main():
                     z=pg.locator("select[name=zone]").first
                     if await z.count(): await z.select_option(label="Madrid")
                     await pg.keyboard.press("Tab"); await pg.wait_for_timeout(8000)
+                    txt=await pg.evaluate("document.body.innerText"); i=txt.find("Métodos de envío"); L(name,"ES ENVIO:\n",re.sub(r"\n+","\n",txt[i:i+200]))
+                    c=pg.locator("select[name=countryCode]").first
+                    if await c.count(): await c.select_option(value="FR")
+                    await pg.wait_for_timeout(3000)
+                    await fill("input[name=address1]","10 Rue de Rivoli"); await fill("input[name=postalCode]","75004"); await fill("input[name=city]","Paris")
+                    await pg.keyboard.press("Tab"); await pg.wait_for_timeout(8000)
                     txt=await pg.evaluate("document.body.innerText")
-                    i=txt.find("Métodos de envío"); L(name,"ENVIO:\n",re.sub(r"\n+","\n",txt[i:i+400])); j=txt.find("Resumen de costos"); L(name,"COSTES:\n",re.sub(r"\n+","\n",txt[j:j+400]))
+                    i=txt.find("Métodos de envío"); L(name,"FR ENVIO:\n",re.sub(r"\n+","\n",txt[i:i+400])); j=txt.find("Resumen de costos"); L(name,"COSTES:\n",re.sub(r"\n+","\n",txt[j:j+400]))
                     await pg.screenshot(path=D+f"{name}_4_checkout_dir.png", full_page=True)
             except Exception as e:
                 L(name,"FALLO:",str(e)[:400]); await pg.screenshot(path=D+f"{name}_fallo.png")
