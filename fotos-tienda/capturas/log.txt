@@ -1,10 +1,9 @@
-telarana | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-calabazas | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-proyector | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-brujas | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-otono | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-micro | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-ramas | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-bolas | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-cinta | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
-nevada | Verificación CAPTCHA | precios: [] | envio: [] | sku: []
+chat visible arriba: 0
+precio: €16,90
+chat visible con barra: 1 748
+popup en ficha: False
+orden portada: ★ Favorito | Proyector Nevada Mágic | Ramas Nórdicas Luminos | Guirnalda Bolas de Nie | Cinta Mágica para el Á | Micro Luces Hada 1 m | Guirnalda Otoño Dorado | ★ Favorito | Luces Noche de Brujas  | Guirnalda Boo! Calabaz
+rating tarjeta: ['★ 4,8 · 312 en AliExpress h=17', '★ 4,5 · 183 en AliExpress h=17', '★ 4,5 · 3061 en AliExpress h=17']
+menu close: ['button close-button menu-drawer__close-button focus-inset @{"x":0,"y":69,"width":52,"height":52,"top":69,"right":52,"bottom":121,"left":0}', 'button close-button menu-drawer__close-button focus-inset @{"x":300.0249938964844,"y":653.171875,"width":52,"height":52,"top":653.171875,"right":352.0249938964844,"bottom":705.171875,"left":300.0249938964844}']
+menu items: Inicio | 🎄 Navidad | Regalos hasta 15 € | Favoritos | 🎃 Halloween | Contacto | Proyector Nevada Mágica | Proyector Mágico 2 en 1
+errores js: []
