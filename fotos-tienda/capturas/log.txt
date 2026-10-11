@@ -1,8 +1,4 @@
-popups: ['search-modal']
-header buttons: ['Menú @16', 'Cerrar @-354', 'A @-336', 'A @-336', 'A @-336', 'A @-336', 'A @-336', 'A @-336', 'SUMMARY @-334', 'Volver al menú principal @-352', 'Cerrar @-54', 'A @-334', 'A @-190', 'A @-46', 'A @98', 'Buscar @60', 'Lumifiesta @104', 'Carrito @330']
-menu count: 1
-menu texto: Inicio 🎃 Halloween 🎄 Navidad Favoritos Regalos hasta 15 € Contacto EUR / ES Telaraña Gigante LED Telaraña Gigante LED €25,90 Proyector Mágico 2 en 1 Proyector Mágico 2 en 1 €14,90 Luces Noche de Brujas 5 m Luces Noche de Brujas 5 m €11,90 Guirnalda Boo! Calabazas y Fantasmas Guirnalda Boo! Calabazas y Fantasmas €9,90
-submenus: 1
+home altura 5699
+prod altura 5302
+col altura 3193
 errores js: []
-consola: ['error: Framing \'https://shop.app/\' violates the following Content Security Policy directive: "frame-ancestors \'self\' https://shop.app https://admin.shopify.com". The request has been blocked.\n', 'error: Failed to load resource: the server responded with a status of 403 ()', "warning: Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://pay.shopify.com') does not match the recipient window's origin ('https://shop.app').", "warning: The resource https://shop.app/pay/assets/sprite.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value a"]
-errores js 2: []
