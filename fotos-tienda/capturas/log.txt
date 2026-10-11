@@ -1,60 +1,10 @@
-d producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos
-d boton: Agregar al carrito
-d carrito: 1 uds, total 25.9 EUR
-d boton pagar: 1
-d checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltiauqqM7SbvbYtVav96/es-es?_r=AQABzBtLc0IhxAoMuRorGVhgpQasaq648tiwVSGtJZEerWBmiMG8&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
-d ES ENVIO:
- Métodos de envío
-Selecciona un método de envío
-Estándar
-8 a 15 días hábiles
-GRATIS
-Pago
-Todas las transacciones son seguras y están encriptadas.
-Tarjeta de crédito
-+2
-Número de tarjeta
-Fecha de v
-d FR ENVIO:
- Métodos de envío
-Selecciona un método de envío
-Estándar
-8 a 15 días hábiles
-GRATIS
-Pago
-Todas las transacciones son seguras y están encriptadas.
-Tarjeta de crédito
-+2
-Número de tarjeta
-Fecha de vencimiento (MM / AA)
-Código de seguridad
-Nombre del titular como aparece en la tarjeta
-Usar la dirección de envío como dirección de facturación
-PayPal
-Klarna
-Agregar descuento
-Recordarme
-Guardar mi in
-d COSTES:
- Resumen de costos
-Artículo
-Valor
-Subtotal
-25,90 €
-Envío
-GRATIS
-Total
-EUR
-25,90 €
-Abre sitio externo externo en una nueva ventana.
-Abre en una nueva ventana.
-Abre sitio externo.
-Método de envío actualizado: Estándar
-d IMPUESTOS: []
-d errores js: []
-m producto url: https://www.lumifiesta.com/products/red-de-telarana-led-para-halloween-8-modos
-m boton: Agregar al carrito
-m carrito: 1 uds, total 25.9 EUR
-m boton pagar: 1
-m checkout url: https://www.lumifiesta.com/checkouts/cn/hWNHltnDqSys8XfY9m8VT6Yi/es-es?_r=AQABEaJCuDApLfQklbWIAzwPn7YPeBu8yz0CdYVTkSoYDO1HY3Ki&auto_redirect=false&edge_redirect=true&skip_shop_pay=true
-m errores js: []
+== home
+halloween/10 oct: ['Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Halloween', '¿Cuánto tarda en llegar mi pedido?', 'Suele llegar en 8–15 días laborables desde que haces el pedido, preparación incluida. Cuando salga, te enviamos un email con el número de seguimiento. Si es para Halloween, pide antes del 10 de octubre; si es para Navidad, antes del 3 de diciembre.']
+primeras lineas: ['Ir directamente al contenido', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '10m', '06s', 'VER AHORA →', '✦', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '10m', '06s', 'VER AHORA →', '✦', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '10m', '06s', 'VER AHORA →']
+== telarana
+halloween/10 oct: ['Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '🚚 Pídelo hoy y recíbelo entre el mié, 21 oct y el vie, 30 oct', '⚠️ Si es para Halloween, puede que no llegue a tiempo. Para el resto de fiestas, ¡perfecto!', 'La decoración de Halloween que se ve desde el final de la calle.', '250 luces LED en morado y naranja, los colores de Halloween.', 'Como fondo de fotos en tu fiesta de Halloween.', 'En cuanto al brillo, es adecuado; sin embargo, los modos de iluminación no son ideales para Halloween, sino más bien para decoraciones navideñas.']
+primeras lineas: ['Ir directamente al contenido', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '09m', '58s', 'VER AHORA →', '✦', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '09m', '58s', 'VER AHORA →', '✦', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '09m', '58s', 'VER AHORA →']
+== proyector
+halloween/10 oct: ['Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '🚚 Pídelo hoy y recíbelo entre el mié, 21 oct y el vie, 30 oct', '⚠️ Si es para Halloween, puede que no llegue a tiempo. Para el resto de fiestas, ¡perfecto!', 'Conéctalo a cualquier USB, gira el cuello hacia el techo o la pared y llena la habitación de escenas mágicas. Cambias el disco y cambia el ambiente: de una noche de Halloween a una Navidad nevada en segundos.']
+primeras lineas: ['Ir directamente al contenido', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '09m', '51s', 'VER AHORA →', '✦', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '09m', '51s', 'VER AHORA →', '✦', '🎄', 'Recíbelo para Navidad: pide antes del 3 de diciembre', '53d', '04h', '09m', '51s', 'VER AHORA →']
+errores: []
