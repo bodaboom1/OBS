@@ -1,0 +1,14 @@
+{
+  "name": "lumio-studio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Lumio Studio — estudio web para crear vídeos con IA (personajes consistentes, estilos, escenas, voces, editor y exportación).",
+  "workspaces": ["server", "web"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "test": "npm run test -w server"
+  },
+  "devDependencies": { "concurrently": "^9.0.0" }
+}
