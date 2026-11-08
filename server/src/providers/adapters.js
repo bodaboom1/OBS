@@ -21,6 +21,13 @@ async function download(url) {
   const r = await http(url, {}, { raw: true, label: 'Descarga' });
   return { buffer: await bufOf(r), mime: r.headers.get('content-type')?.split(';')[0] || undefined };
 }
+import { spawnSync } from 'node:child_process';
+/** Recorta/escala una imagen a w×h exactos (Sora exige que la referencia coincida con la resolución). */
+function fitImage(buffer, w, h) {
+  const r = spawnSync('ffmpeg', ['-v', 'error', '-i', 'pipe:0', '-vf', `scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h}`, '-frames:v', '1', '-f', 'image2', '-c:v', 'mjpeg', 'pipe:1'], { input: buffer, maxBuffer: 3e7 });
+  if (r.status !== 0 || !r.stdout.length) throw new Error('No se pudo preparar la imagen de referencia (¿ffmpeg instalado?)');
+  return r.stdout;
+}
 const dataUri = (ref) => `data:${ref.mime};base64,${ref.buffer.toString('base64')}`;
 
 // ---------- Anthropic (LLM) ----------
@@ -48,10 +55,11 @@ const OPENAI_VOICES = [
 ].map(([id, name, gender]) => ({ id, name, gender, provider: 'openai' }));
 
 const openai = {
-  id: 'openai', name: 'OpenAI', categories: ['llm', 'image', 'voice'], docs: 'https://platform.openai.com/docs',
+  id: 'openai', name: 'OpenAI', categories: ['llm', 'image', 'voice', 'video'], docs: 'https://platform.openai.com/docs',
+  modelOptions: { video: ['sora-2', 'sora-2-pro'], image: ['gpt-image-1'] },
   description: 'LLM (guiones), imágenes con referencias (gpt-image-1) y voces (TTS).',
   fields: [{ key: 'apiKey', label: 'API key', secret: true, placeholder: 'sk-…' }],
-  defaultModels: { llm: 'gpt-4o', image: 'gpt-image-1', voice: 'gpt-4o-mini-tts' },
+  defaultModels: { llm: 'gpt-4o', image: 'gpt-image-1', voice: 'gpt-4o-mini-tts', video: 'sora-2' },
   auth: (cfg) => ({ Authorization: `Bearer ${cfg.apiKey}` }),
   async test(cfg) { await http('https://api.openai.com/v1/models', { headers: this.auth(cfg), timeout: 20000 }, { label: 'OpenAI' }); },
   async chat(cfg, { system, user, maxTokens = 4096 }) {
@@ -66,7 +74,7 @@ const openai = {
   handlers: {
     image: {
       async start(cfg, req) {
-        const model = cfg.models?.image || 'gpt-image-1';
+        const model = req.model || cfg.models?.image || 'gpt-image-1';
         const size = req.aspect === '16:9' ? '1536x1024' : req.aspect === '9:16' ? '1024x1536' : '1024x1024';
         const quality = req.quality === 'high' ? 'high' : req.quality === 'draft' ? 'low' : 'medium';
         const A = openai.auth(cfg);
@@ -86,6 +94,29 @@ const openai = {
         if (d?.b64_json) return { status: 'done', files: [{ buffer: Buffer.from(d.b64_json, 'base64'), mime: 'image/png' }] };
         if (d?.url) return { status: 'done', files: [await download(d.url)] };
         throw new Error('OpenAI no devolvió ninguna imagen');
+      },
+    },
+    video: {
+      // Sora (API de vídeo de OpenAI): crea un trabajo, se sondea y se descarga el MP4.
+      async start(cfg, req) {
+        const sizes = { '16:9': '1280x720', '9:16': '720x1280' };
+        const size = sizes[req.aspect];
+        if (!size) throw new Error('Sora no admite formato 1:1. Elige 16:9 o 9:16.');
+        const [w, h] = size.split('x').map(Number);
+        const fd = new FormData();
+        fd.set('model', req.model || cfg.models?.video || 'sora-2'); fd.set('prompt', req.prompt); fd.set('size', size);
+        fd.set('seconds', String(req.duration <= 4 ? 4 : req.duration <= 8 ? 8 : 12));
+        const ref = req.startImage || req.references?.[0];
+        if (ref) { const fitted = fitImage(ref.buffer, w, h); fd.set('input_reference', new Blob([fitted], { type: 'image/jpeg' }), 'ref.jpg'); }
+        const j = await http('https://api.openai.com/v1/videos', { method: 'POST', headers: openai.auth(cfg), body: fd, timeout: 120000 }, { label: 'OpenAI Sora' });
+        return { status: 'pending', state: { id: j.id } };
+      },
+      async poll(cfg, st) {
+        const j = await http(`https://api.openai.com/v1/videos/${st.id}`, { headers: openai.auth(cfg), timeout: 30000 }, { label: 'OpenAI Sora' });
+        if (j.status === 'failed') throw new Error(`Sora: ${j.error?.message || 'la generación falló'}`);
+        if (j.status !== 'completed') return { status: 'pending', state: st, progress: Math.max(10, Math.round(j.progress || 10)) };
+        const r = await http(`https://api.openai.com/v1/videos/${st.id}/content`, { headers: openai.auth(cfg), timeout: 300000 }, { raw: true, label: 'OpenAI Sora' });
+        return { status: 'done', files: [{ buffer: await bufOf(r), mime: 'video/mp4' }] };
       },
     },
     voice: {
@@ -154,7 +185,7 @@ const elevenlabs = {
 
 // ---------- Replicate (imagen + vídeo + música, modelos configurables) ----------
 const replicate = {
-  id: 'replicate', name: 'Replicate', categories: ['image', 'video', 'music'], docs: 'https://replicate.com/docs',
+  id: 'replicate', modelOptions: { video: ['minimax/video-01'], image: ['black-forest-labs/flux-schnell'] }, name: 'Replicate', categories: ['image', 'video', 'music'], docs: 'https://replicate.com/docs',
   description: 'Catálogo abierto de modelos. Indica el identificador “propietario/modelo” en cada categoría.',
   fields: [{ key: 'apiKey', label: 'API token', secret: true, placeholder: 'r8_…' }],
   defaultModels: { image: 'black-forest-labs/flux-schnell', video: 'minimax/video-01', music: 'meta/musicgen' },
@@ -163,7 +194,7 @@ const replicate = {
   mk(category, buildInput) {
     return {
       async start(cfg, req) {
-        const model = cfg.models?.[category] || replicate.defaultModels[category];
+        const model = req.model || cfg.models?.[category] || replicate.defaultModels[category];
         const j = await http(`https://api.replicate.com/v1/models/${model}/predictions`, {
           method: 'POST', headers: replicate.hdr(cfg), body: JSON.stringify({ input: buildInput(req) }),
         }, { label: 'Replicate' });
@@ -187,7 +218,7 @@ replicate.handlers = {
 
 // ---------- fal.ai (imagen + vídeo + lipsync) ----------
 const fal = {
-  id: 'fal', name: 'fal.ai', categories: ['image', 'video', 'lipsync'], docs: 'https://fal.ai/docs',
+  id: 'fal', modelOptions: { video: ['fal-ai/kling-video/v2/master/image-to-video'], image: ['fal-ai/flux/schnell'] }, name: 'fal.ai', categories: ['image', 'video', 'lipsync'], docs: 'https://fal.ai/docs',
   description: 'Modelos rápidos de imagen y vídeo (Kling, Flux…) y sincronización labial.',
   fields: [{ key: 'apiKey', label: 'API key', secret: true, placeholder: 'id:secret' }],
   defaultModels: { image: 'fal-ai/flux/schnell', video: 'fal-ai/kling-video/v2/master/image-to-video', lipsync: 'fal-ai/sync-lipsync' },
@@ -196,7 +227,7 @@ const fal = {
   mk(category, buildInput, pick) {
     return {
       async start(cfg, req) {
-        const model = cfg.models?.[category] || fal.defaultModels[category];
+        const model = req.model || cfg.models?.[category] || fal.defaultModels[category];
         const j = await http(`https://queue.fal.run/${model}`, { method: 'POST', headers: fal.hdr(cfg), body: JSON.stringify(buildInput(req)) }, { label: 'fal.ai' });
         return { status: 'pending', state: { statusUrl: j.status_url, responseUrl: j.response_url } };
       },

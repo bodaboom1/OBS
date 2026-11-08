@@ -7,7 +7,7 @@ import { HttpError, uid, now, parseJSON } from './util.js';
 import { ADAPTERS } from './providers/adapters.js';
 import { activeProvider, loadConfig } from './providers/store.js';
 import { charge, grant, jobCost } from './credits.js';
-import { createAsset, saveBuffer, uploadPath, getAsset, assetDto, EXT_MIME, MIME_EXT } from './media.js';
+import { createAsset, saveBuffer, uploadPath, getAsset, assetDto, EXT_MIME, MIME_EXT, imageAspect } from './media.js';
 import { getProjectRow, projectDto, listCharacters, mergeSceneMedia, mergeProjectMedia, sceneDto } from './models.js';
 import { scenePrompt, pickReferences, styleById } from './prompts.js';
 import { exportProject } from './export.js';
@@ -42,6 +42,39 @@ export function enqueueJob(userId, kind, params = {}) {
   return jobDto(get('SELECT * FROM jobs WHERE id=?', id));
 }
 
+/**
+ * «Referencia a vídeo»: referencias (assets o personajes) citables en el prompt con @alias.
+ * El @alias se sustituye por una mención explícita para que el modelo sepa a qué imagen se refiere.
+ */
+function applyReferences(userId, p, input, chars) {
+  const refs = [];
+  for (const r of (Array.isArray(p.refs) ? p.refs : []).slice(0, 8)) {
+    const a = getAsset(userId, r.assetId);
+    if (!a) throw new HttpError(404, 'ASSET_NOT_FOUND', 'Una de las referencias ya no existe.');
+    refs.push({ alias: String(r.alias || '').replace(/[^\p{L}\p{N}_-]/gu, '').slice(0, 30), kind: a.kind, file: a.file, mime: a.mime });
+  }
+  for (const c of chars) {
+    const pr = pickReferences([c], 3);
+    pr.forEach((i) => refs.push({ alias: c.name.replace(/\s+/g, ''), kind: 'image', file: i.file, mime: i.mime, character: c }));
+  }
+  const images = refs.filter((r) => r.kind === 'image');
+  const videos = refs.filter((r) => r.kind === 'video');
+  let prompt = String(p.prompt || '');
+  images.forEach((r, i) => {
+    const label = r.character ? `the character "${r.character.name}" (${[r.character.appearance, r.character.description].filter(Boolean).join('; ')}) as seen in reference image ${i + 1}` : `reference image ${i + 1}`;
+    if (r.alias) prompt = prompt.replace(new RegExp(`@${r.alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\p{L}\\p{N}_-])`, 'giu'), label);
+  });
+  videos.forEach((r, i) => { if (r.alias) prompt = prompt.replace(new RegExp(`@${r.alias}(?![\\p{L}\\p{N}_-])`, 'giu'), `reference video ${i + 1}`); });
+  const style = p.style ? styleById(p.style).prompt : '';
+  input.prompt = [prompt, style].filter(Boolean).join('\n');
+  input.references = images.map((r) => ({ file: r.file, mime: r.mime }));
+  input.refVideos = videos.map((r) => ({ file: r.file, mime: r.mime }));
+  if (!input.prompt.trim()) throw new HttpError(400, 'EMPTY_PROMPT', 'Describe la escena que quieres generar.');
+  if (p.aspect === 'adaptive') input.aspect = images[0] ? imageAspect(images[0].file) : '16:9';
+  input.duration = Math.min(15, Math.max(3, Number(p.duration) || 5));
+  input.summary = `Referencia a vídeo (${images.length} img${videos.length ? `, ${videos.length} vídeo` : ''}): ${prompt.slice(0, 80)}`;
+}
+
 /** Resuelve prompts, referencias y parámetros a partir del proyecto/escena (consistencia de personajes incluida). */
 function buildInput(userId, kind, p) {
   const input = { kind, quality: p.quality || 'standard', projectId: p.projectId || null, sceneId: p.sceneId || null };
@@ -58,12 +91,15 @@ function buildInput(userId, kind, p) {
     else if (p.characterIds?.length) chars = listCharacters(userId, p.characterIds);
     const base = project && scene ? scenePrompt({ project, scene, chars, purpose: kind }) : [styleById(p.style).prompt, p.prompt].filter(Boolean).join('. ');
     input.prompt = (p.prompt && scene ? `${p.prompt}\n` : '') + base;
-    if (!(p.prompt || scene?.visual)) throw new HttpError(400, 'EMPTY_PROMPT', 'Describe la escena antes de generar.');
+    if (!(p.prompt || scene?.visual || input.references?.length)) throw new HttpError(400, 'EMPTY_PROMPT', 'Describe la escena antes de generar.');
     input.aspect = project?.settings.aspect || p.aspect || '16:9';
     input.references = kind === 'image' ? pickReferences(chars, 6).map((i) => ({ file: i.file, mime: i.mime })) : [];
+    if (kind === 'video' && !scene) applyReferences(userId, p, input, chars);
+    if (input.aspect === 'adaptive') input.aspect = '16:9';
+    if (p.model) input.model = String(p.model).slice(0, 200);
     input.duration = scene?.duration || p.duration || 5;
     if (kind === 'video') input.startAssetId = scene?.media?.imageAssetId || p.assetId || null;
-    input.summary = (scene ? `Escena: ${scene.title || ''}` : p.prompt || '').slice(0, 140);
+    if (!input.summary) input.summary = (scene ? `Escena: ${scene.title || ''}` : p.prompt || '').slice(0, 140);
   } else if (kind === 'voice') {
     let text = p.text; let emotion = p.emotion; let charId = p.characterId;
     if (scene && p.dialogueId) {
@@ -114,6 +150,8 @@ async function loadRequest(job, input) {
     const a = getAsset(job.user_id, input.startAssetId);
     if (a) req.startImage = readRef(a.file, a.mime);
   }
+  if (job.kind === 'video' && !req.startImage && req.references?.length) req.startImage = req.references[0];
+  if (job.kind === 'video' && input.refVideos?.length) req.refVideos = input.refVideos.map((r) => readRef(r.file, r.mime));
   if (job.kind === 'lipsync') {
     const v = getAsset(job.user_id, input.videoAssetId); const a = getAsset(job.user_id, input.audioAssetId);
     req.video = readRef(v.file, v.mime); req.audio = readRef(a.file, a.mime);

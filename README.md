@@ -13,6 +13,9 @@ npm test           # tests del backend (API, cola de trabajos, créditos, export
 ```
 Requisitos: Node ≥ 22.13 (usa `node:sqlite`) y `ffmpeg`/`ffprobe` en el PATH (exportación, duración de medios, tono de voz).
 
+## Referencia a vídeo
+Herramienta nueva (`/reference-to-video`): subes imágenes o vídeo de referencia (o eliges personajes), las citas en el prompt con `@alias` (botón «Añadir referencia»), puedes pulsar «Mejorar prompt» (requiere LLM), elegir modelo, aspecto (incl. *Adaptativo*, que sigue la primera imagen), duración, calidad y estilo, y generar. Las `@menciones` se traducen a «reference image N» antes de enviarse al modelo. Incluye adaptador de Sora (OpenAI `/v1/videos`, sin probar con clave real). Las referencias en vídeo se guardan pero ningún adaptador las usa aún.
+
 ## Arquitectura
 
 ```

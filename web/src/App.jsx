@@ -1,9 +1,10 @@
 import { Fragment, useEffect, useState } from 'react';
 import { NavLink, Route, Routes, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Clapperboard, FolderKanban, Users, Image, Film, Mic, History, Settings as Cog, Menu, Coins, Sparkles, Loader2 } from 'lucide-react';
+import { LayoutDashboard, Clapperboard, Layers, FolderKanban, Users, Image, Film, Mic, History, Settings as Cog, Menu, Coins, Sparkles, Loader2 } from 'lucide-react';
 import { useApp } from './store.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Create from './pages/Create.jsx';
+import ReferenceVideo from './pages/ReferenceVideo.jsx';
 import Projects from './pages/Projects.jsx';
 import ProjectEditor from './pages/ProjectEditor.jsx';
 import Characters from './pages/Characters.jsx';
@@ -16,6 +17,7 @@ import Settings from './pages/Settings.jsx';
 const NAV = [
   ['/', 'Panel principal', LayoutDashboard, true],
   ['/create', 'Crear nuevo vídeo', Clapperboard],
+  ['/reference-to-video', 'Referencia a vídeo', Layers],
   ['/projects', 'Mis proyectos', FolderKanban],
   ['/characters', 'Mis personajes', Users],
   ['/images', 'Biblioteca de imágenes', Image],
@@ -41,7 +43,7 @@ export default function App() {
         <nav className="nav">
           {NAV.map(([to, label, Icon, end], i) => (
             <Fragment key={to}>
-              {i === 1 || i === 8 ? <div className="sep" /> : null}
+              {i === 1 || i === 9 ? <div className="sep" /> : null}
               <NavLink to={to} end={end}><Icon size={18} />{label}</NavLink>
             </Fragment>
           ))}
@@ -64,6 +66,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/reference-to-video" element={<ReferenceVideo />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectEditor />} />
           <Route path="/characters" element={<Characters />} />

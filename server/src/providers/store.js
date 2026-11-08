@@ -38,7 +38,7 @@ export function publicProviders(userId) {
     const cfg = loadConfig(userId, a.id) || {};
     return {
       id: a.id, name: a.name, description: a.description, docs: a.docs, categories: a.categories,
-      defaultModels: a.defaultModels, configured: !!cfg.apiKey, models: cfg.models || {},
+      defaultModels: a.defaultModels, modelOptions: a.modelOptions || {}, configured: !!cfg.apiKey, models: cfg.models || {},
       fields: a.fields.map((f) => ({ ...f, set: !!cfg[f.key], hint: cfg[f.key] ? `••••${String(cfg[f.key]).slice(-4)}` : '' })),
     };
   });

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Clapperboard, FolderKanban, Users, Image, Film, Mic, Settings, History, Plug, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Layers, Clapperboard, FolderKanban, Users, Image, Film, Mic, Settings, History, Plug, CheckCircle2, ArrowRight } from 'lucide-react';
 import { api, fmtDate } from '../api.js';
 import { useApp } from '../store.jsx';
 import { StatusChip } from '../components/ui.jsx';
@@ -12,6 +12,7 @@ export default function Dashboard() {
   const s = boot.stats;
   const tiles = [
     ['/create', 'Crear nuevo vídeo', 'Idea, guion, imagen o personajes', Clapperboard],
+    ['/reference-to-video', 'Referencia a vídeo', 'Imágenes de referencia + @menciones', Layers],
     ['/projects', 'Mis proyectos', `${s.projects} proyectos`, FolderKanban],
     ['/characters', 'Mis personajes', `${s.characters} personajes`, Users],
     ['/images', 'Biblioteca de imágenes', `${s.images} imágenes`, Image],

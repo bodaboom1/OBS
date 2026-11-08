@@ -50,7 +50,7 @@ export async function probe(file) {
 
 export async function createAsset({ userId, kind, file, mime, name = '', source = 'upload', provider = null, meta = {}, projectId = null, sceneId = null }) {
   const size = fs.statSync(uploadPath(file)).size;
-  if (kind !== 'image') Object.assign(meta, await probe(file));
+  Object.assign(meta, await probe(file));
   const id = uid('ast');
   run('INSERT INTO assets (id,user_id,kind,name,file,mime,size,source,provider,meta,project_id,scene_id,created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
     id, userId, kind, name, file, mime, size, source, provider, JSON.stringify(meta), projectId, sceneId, now());
@@ -76,6 +76,15 @@ export const listAssets = (userId, kind) =>
 export function removeFileIfOrphan(file) {
   const used = get('SELECT 1 x FROM assets WHERE file=? UNION SELECT 1 FROM character_images WHERE file=?', file, file);
   if (!used) fs.rmSync(uploadPath(file), { force: true });
+}
+
+import { execFileSync } from 'node:child_process';
+export function imageAspect(file) {
+  try {
+    const o = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', uploadPath(file)], { timeout: 15000 }).toString().trim().split(',').map(Number);
+    const r = o[0] / o[1];
+    return r > 1.2 ? '16:9' : r < 0.83 ? '9:16' : '1:1';
+  } catch { return '16:9'; }
 }
 
 export function toDataUri(file, mime) {

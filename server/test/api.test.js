@@ -128,3 +128,21 @@ test('exportar con escena sin medios falla con mensaje claro', async () => {
   const j = await waitJob((await api('POST', '/api/jobs', { kind: 'export', projectId: p.id })).json.job.id);
   assert.equal(j.status, 'failed'); assert.match(j.error, /no tiene imagen ni vídeo/);
 });
+
+test('referencia a vídeo: @menciones, aspecto adaptativo, modelo elegido y Enhance sin LLM', async () => {
+  let seen;
+  ADAPTERS.mockv = { id: 'mockv', name: 'MockV', categories: ['video'], fields: [{ key: 'apiKey', secret: true }], handlers: { video: { async start(cfg, req) { seen = req; return { status: 'done', files: [{ buffer: fs.readFileSync(mp4), mime: 'video/mp4' }] }; } } } };
+  const { saveConfig } = await import('../src/providers/store.js'); saveConfig('usr_local', 'mockv', { apiKey: 'k' });
+  const a1 = (await api('POST', '/api/assets', fileForm(png, 'image/png'))).json.assets[0];
+  assert.ok(a1.meta.width > 0, 'las imágenes guardan dimensiones');
+  const r = await api('POST', '/api/jobs', { kind: 'video', prompt: 'El @producto gira mientras @DonÁlvaro lo mira', refs: [{ assetId: a1.id, alias: 'producto' }], characterIds: [charId], aspect: 'adaptive', model: 'mi/modelo', duration: 8 });
+  assert.equal(r.status, 202);
+  const j = await waitJob(r.json.job.id);
+  assert.equal(j.status, 'succeeded', j.error);
+  assert.match(seen.prompt, /reference image 1/); assert.doesNotMatch(seen.prompt, /@producto/);
+  assert.equal(seen.model, 'mi/modelo'); assert.equal(seen.aspect, '1:1'); assert.equal(seen.duration, 8);
+  assert.ok(seen.references.length >= 2 && seen.startImage);
+  assert.equal(j.output.asset.kind, 'video');
+  const e = await api('POST', '/api/prompt/enhance', { prompt: 'algo' });
+  assert.equal(e.status, 409); assert.equal(e.json.error.code, 'PROVIDER_NOT_CONFIGURED');
+});
