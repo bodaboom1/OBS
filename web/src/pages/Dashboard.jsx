@@ -1,71 +1,80 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Layers, Clapperboard, FolderKanban, Users, Image, Film, Mic, Settings, History, Plug, CheckCircle2, ArrowRight } from 'lucide-react';
-import { api, fmtDate } from '../api.js';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowRight, Wand2, ScrollText, Layers, Users, CheckCircle2, Circle, Film } from 'lucide-react';
+import { api } from '../api.js';
 import { useApp } from '../store.jsx';
-import { StatusChip } from '../components/ui.jsx';
 
 export default function Dashboard() {
-  const { boot, jobs } = useApp();
-  const [projects, setProjects] = useState([]);
-  useEffect(() => { api.get('/projects').then((r) => setProjects(r.projects.slice(0, 4))).catch(() => {}); }, []);
+  const { boot } = useApp();
+  const nav = useNavigate();
+  const [projects, setProjects] = useState(null);
+  const [idea, setIdea] = useState('');
+  useEffect(() => { api.get('/projects').then((r) => setProjects(r.projects.slice(0, 4))).catch(() => setProjects([])); }, []);
   const s = boot.stats;
-  const tiles = [
-    ['/create', 'Crear nuevo vídeo', 'Idea, guion, imagen o personajes', Clapperboard],
-    ['/reference-to-video', 'Referencia a vídeo', 'Imágenes de referencia + @menciones', Layers],
-    ['/projects', 'Mis proyectos', `${s.projects} proyectos`, FolderKanban],
-    ['/characters', 'Mis personajes', `${s.characters} personajes`, Users],
-    ['/images', 'Biblioteca de imágenes', `${s.images} imágenes`, Image],
-    ['/videos', 'Biblioteca de vídeos', `${s.videos} vídeos`, Film],
-    ['/voices', 'Generación de voces', 'Locuciones con emoción', Mic],
-    ['/history', 'Historial de creaciones', 'Trabajos y resultados', History],
-    ['/settings', 'Configuración', 'Proveedores y créditos', Settings],
+  const connectedAny = boot.categories.some((c) => c.connected);
+  const go = () => nav('/create', { state: { idea: idea.trim() } });
+
+  const starts = [
+    ['c1', Wand2, 'Desde una idea', 'Cuéntala en una frase', () => nav('/create', { state: { mode: 'idea' } })],
+    ['c2', ScrollText, 'Desde un guion', 'Pégalo y lo dividimos en escenas', () => nav('/create', { state: { mode: 'script' } })],
+    ['c3', Layers, 'Con referencias', 'Tus imágenes guían el vídeo', () => nav('/reference-to-video')],
+    ['c4', Users, 'Con mis personajes', s.characters ? `${s.characters} guardados` : 'Crea el primero', () => nav(s.characters ? '/create' : '/characters')],
   ];
-  const missing = boot.categories.filter((c) => !c.connected);
+  const checklist = [
+    [s.characters > 0, 'Crea un personaje', '/characters'],
+    [s.projects > 0, 'Crea tu primer vídeo', '/create'],
+    [connectedAny, 'Conecta una IA para generar', '/settings'],
+  ];
+
   return (
     <div className="page">
       <div className="hero">
-        <h1>Da vida a tus historias con IA, sin saber de edición.</h1>
-        <p className="muted" style={{ margin: '10px 0 20px', maxWidth: 560 }}>Escribe una idea, elige tus personajes y un estilo visual. Lumio divide el vídeo en escenas, las genera y las monta en un editor.</p>
-        <Link to="/create" className="btn primary lg"><Clapperboard size={18} /> Crear nuevo vídeo</Link>
+        <h1>¿Qué vídeo quieres crear hoy?</h1>
+        <p>Escribe tu idea. Lumio la convierte en escenas, voces y un vídeo listo para publicar.</p>
+        <div className="quick">
+          <textarea aria-label="Tu idea" value={idea} onChange={(e) => setIdea(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) go(); }} placeholder="Un caballero elegante entra en una cafetería y descubre que el café cuesta 8 euros…" />
+          <button className="btn primary lg" onClick={go}>Empezar <ArrowRight size={18} /></button>
+        </div>
       </div>
 
-      <div className="section-title"><h2>Herramientas</h2></div>
-      <div className="tile-grid">
-        {tiles.map(([to, t, sub, Icon]) => (
-          <Link key={to} to={to} className="card hover tile"><span className="ico"><Icon size={22} /></span><div><h3>{t}</h3><p className="muted small">{sub}</p></div></Link>
+      <div className="section-title"><h2>O empieza de otra forma</h2></div>
+      <div className="tile-grid starts">
+        {starts.map(([c, Icon, t, d, fn]) => (
+          <button key={t} className="start-card" onClick={fn}><span className={`ico ${c}`}><Icon size={22} /></span><div><h3>{t}</h3><p className="small muted">{d}</p></div></button>
         ))}
       </div>
 
-      <div className="grid2" style={{ marginTop: 28, alignItems: 'start' }}>
-        <div>
-          <div className="section-title" style={{ marginTop: 0 }}><h2>Proyectos recientes</h2><Link to="/projects" className="muted small">Ver todos <ArrowRight size={12} /></Link></div>
-          <div className="col">
-            {projects.length === 0 && <div className="empty">Aún no hay proyectos. ¡Crea el primero!</div>}
-            {projects.map((p) => (
-              <Link key={p.id} to={`/projects/${p.id}`} className="card hover row between">
-                <div><b>{p.title}</b><div className="small muted">{p.sceneCount} escenas · {fmtDate(p.updatedAt)}</div></div>
-                <span className={`chip ${p.status === 'exported' ? 'ok' : ''}`}>{p.status === 'exported' ? 'Exportado' : 'Borrador'}</span>
+      {projects && projects.length > 0 && <>
+        <div className="section-title"><h2>Continúa donde lo dejaste</h2><Link to="/projects" className="btn ghost sm">Ver todos <ArrowRight size={14} /></Link></div>
+        <div className="tile-grid">
+          {projects.map((p) => (
+            <Link key={p.id} to={`/projects/${p.id}`} className="card hover proj">
+              <div className="cover">{p.thumbnail ? <img src={p.thumbnail} alt="" /> : <Film size={34} />}<span className={`chip tag ${p.status === 'exported' ? 'ok' : ''}`}>{p.status === 'exported' ? 'Exportado' : 'Borrador'}</span></div>
+              <div className="body"><b>{p.title}</b><div className="small muted">{p.sceneCount} escenas · {p.settings.aspect}</div></div>
+            </Link>
+          ))}
+        </div>
+      </>}
+
+      {(projects && projects.length === 0) || !connectedAny ? (
+        <>
+          <div className="section-title"><h2>Primeros pasos</h2></div>
+          <div className="card col" style={{ gap: 6 }}>
+            {checklist.map(([done, label, to]) => (
+              <Link key={label} to={to} className="row" style={{ padding: '10px 4px', gap: 12, fontWeight: 600, color: done ? 'var(--faint)' : 'var(--text)' }}>
+                {done ? <CheckCircle2 size={22} color="var(--mint)" /> : <Circle size={22} color="var(--line2)" />}
+                <span style={{ textDecoration: done ? 'line-through' : 'none', flex: 1 }}>{label}</span>{!done && <ArrowRight size={16} color="var(--accent)" />}
               </Link>
             ))}
           </div>
-        </div>
-        <div>
-          <div className="section-title" style={{ marginTop: 0 }}><h2>Conexiones de IA</h2><Link to="/settings" className="muted small">Gestionar <ArrowRight size={12} /></Link></div>
-          <div className="card col" style={{ gap: 10 }}>
-            {boot.categories.map((c) => (
-              <div key={c.id} className="row between">
-                <span className="small">{c.label}</span>
-                {c.connected ? <span className="chip ok"><CheckCircle2 size={12} /> {boot.providers.find((p) => p.id === c.active)?.name}</span> : <span className="chip warn"><Plug size={12} /> Sin conectar</span>}
-              </div>
-            ))}
-            {missing.length > 0 && <p className="small faint">Lo que no esté conectado no se simula: te avisaremos al intentar generarlo.</p>}
-          </div>
-          {jobs.slice(0, 3).length > 0 && <>
-            <div className="section-title"><h2>Actividad</h2></div>
-            <div className="col">{jobs.slice(0, 3).map((j) => <div key={j.id} className="card row between"><span className="small">{j.kind} · {j.summary || '—'}</span><StatusChip status={j.status} /></div>)}</div>
-          </>}
-        </div>
+        </>
+      ) : null}
+
+      <div className="section-title"><h2>Cómo funciona</h2></div>
+      <div className="how">
+        {[['1', 'Cuenta tu idea', 'Una frase, un guion o tus imágenes.'], ['2', 'Elige personajes y estilo', 'Para que todo se vea igual de principio a fin.'], ['3', 'Genera y exporta', 'Revisa las escenas y descarga tu vídeo.']].map(([n, t, d]) => (
+          <div key={n} className="card step"><span className="n">{n}</span><div><h3>{t}</h3><p className="small muted">{d}</p></div></div>
+        ))}
       </div>
     </div>
   );

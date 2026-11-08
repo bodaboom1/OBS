@@ -26,10 +26,10 @@ export default function Characters() {
   };
   return (
     <div className="page">
-      <PageHead title="Mis personajes" sub="Crea fichas con imágenes de referencia para mantener la misma cara, ropa y proporciones en todos tus vídeos.">
-        <button className="btn primary" onClick={() => setCreating(true)}><Plus size={16} /> Nuevo personaje</button>
+      <PageHead title="Personajes" sub="Guárdalos una vez y úsalos en todos tus vídeos, siempre con la misma cara y ropa.">
+        <button className="btn primary" onClick={() => setCreating(true)}><Plus size={17} /> Nuevo personaje</button>
       </PageHead>
-      {list && list.length === 0 && <Empty icon={Users} title="Tu biblioteca está vacía" text="Un personaje con varias vistas (frontal, perfiles, rostro, expresiones) logra la máxima consistencia entre escenas."><button className="btn primary" onClick={() => setCreating(true)}>Crear mi primer personaje</button></Empty>}
+      {list && list.length === 0 && <Empty icon={Users} title="Crea tu primer personaje" text="Sube varias vistas (frontal, perfiles, rostro) y la IA lo mantendrá igual en cada escena."><button className="btn primary" onClick={() => setCreating(true)}>Crear mi primer personaje</button></Empty>}
       <div className="tile-grid">
         {(list || []).map((c) => {
           const cover = c.images.find((i) => i.slot === 'front') || c.images.find((i) => i.slot === 'face') || c.images[0];
@@ -40,7 +40,7 @@ export default function Characters() {
               <div className="body">
                 <h3>{c.name}</h3>
                 <p className="small muted" style={{ minHeight: 20, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{c.description || 'Sin descripción'}</p>
-                <div className="row between" style={{ marginTop: 8 }}><span className="small faint">{c.images.length} imágenes</span><span className={`chip ${k.score >= 5 ? 'ok' : k.score >= 3 ? 'warn' : ''}`}>Consistencia {k.label.toLowerCase()}</span></div>
+                <div className="row between" style={{ marginTop: 8 }}><span className="small faint">{c.images.length} imágenes</span><span className={`chip ${k.score >= 5 ? 'ok' : k.score >= 3 ? 'warn' : ''}`}>{k.label}</span></div>
               </div>
             </Link>
           );

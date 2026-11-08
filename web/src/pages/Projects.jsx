@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FolderKanban, Plus, Trash2 } from 'lucide-react';
+import { FolderOpen, Plus, Trash2, Film } from 'lucide-react';
 import { api, fmtDate } from '../api.js';
 import { useApp } from '../store.jsx';
 import { Empty, PageHead, confirmAsk } from '../components/ui.jsx';
@@ -11,31 +11,29 @@ export default function Projects() {
   const nav = useNavigate();
   const load = () => api.get('/projects').then((r) => setList(r.projects)).catch((e) => toast(e.message, 'error'));
   useEffect(() => { load(); }, []); // eslint-disable-line
-  const remove = async (p) => {
-    if (!confirmAsk(`¿Eliminar el proyecto «${p.title}»? Se borrarán sus escenas (los archivos siguen en tu biblioteca).`)) return;
-    await api.del(`/projects/${p.id}`); toast('Proyecto eliminado', 'ok'); load();
+  const remove = async (e, p) => {
+    e.preventDefault(); e.stopPropagation();
+    if (!confirmAsk(`¿Eliminar «${p.title}»?`)) return;
+    await api.del(`/projects/${p.id}`); toast('Eliminado', 'ok'); load();
   };
   return (
     <div className="page">
-      <PageHead title="Mis proyectos" sub="Todos tus vídeos, con guardado automático.">
-        <button className="btn primary" onClick={() => nav('/create')}><Plus size={16} /> Nuevo vídeo</button>
+      <PageHead title="Mis vídeos" sub="Todo se guarda solo.">
+        <button className="btn primary" onClick={() => nav('/create')}><Plus size={17} /> Nuevo vídeo</button>
       </PageHead>
-      {list && list.length === 0 && <Empty icon={FolderKanban} title="Aún no tienes proyectos" text="Crea tu primer vídeo a partir de una idea, un guion o una imagen."><Link className="btn primary" to="/create">Crear vídeo</Link></Empty>}
+      {list && list.length === 0 && <Empty icon={FolderOpen} title="Aún no hay vídeos" text="Tu primer vídeo está a un par de clics."><Link className="btn primary" to="/create">Crear mi primer vídeo</Link></Empty>}
       <div className="tile-grid">
         {(list || []).map((p) => {
           const style = boot.styles.find((s) => s.id === p.settings.style);
           return (
-            <div key={p.id} className="card tile">
-              <Link to={`/projects/${p.id}`} className="tile" style={{ gap: 6 }}>
-                <h3>{p.title}</h3>
-                <div className="row"><span className="chip acc">{style?.name || 'Sin estilo'}</span><span className="chip">{p.settings.aspect}</span><span className="chip">{p.sceneCount} escenas</span></div>
-                <p className="small muted">Editado {fmtDate(p.updatedAt)}</p>
-              </Link>
-              <div className="row between">
-                <span className={`chip ${p.status === 'exported' ? 'ok' : ''}`}>{p.status === 'exported' ? 'Exportado' : 'Borrador'}</span>
-                <button className="btn ghost sm danger" onClick={() => remove(p)} aria-label="Eliminar"><Trash2 size={15} /></button>
+            <Link key={p.id} to={`/projects/${p.id}`} className="card hover proj">
+              <div className="cover">{p.thumbnail ? <img src={p.thumbnail} alt="" /> : <Film size={34} />}<span className={`chip tag ${p.status === 'exported' ? 'ok' : ''}`}>{p.status === 'exported' ? 'Exportado' : 'Borrador'}</span></div>
+              <div className="body">
+                <div className="row between" style={{ flexWrap: 'nowrap' }}><b style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.title}</b><button className="btn ghost icon sm danger" onClick={(e) => remove(e, p)} aria-label="Eliminar"><Trash2 size={15} /></button></div>
+                <div className="small muted">{style?.name} · {p.sceneCount} escenas · {p.settings.aspect}</div>
+                <div className="small faint">{fmtDate(p.updatedAt)}</div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

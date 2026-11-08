@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Check, ChevronDown, ChevronUp, Copy, Film, GripVertical, ImageIcon, Mic, Music, Play, Plus, RefreshCw, Trash2, Wand2, Volume2, Sparkles, Scissors, Download, Plug, Upload, Wand, Clapperboard, Captions, X, Pause } from 'lucide-react';
+import { ArrowLeft, Check, ChevronDown, ChevronUp, Copy, Film, GripVertical, ImageIcon, Mic, Music, Play, Plus, RefreshCw, Trash2, Wand2, Volume2, Sparkles, Scissors, Download, Plug, Upload, Wand, Clapperboard, Captions, X, Pause, ArrowRight, Settings as Cog } from 'lucide-react';
 import { api, form, uid, fmtTime } from '../api.js';
 import { useApp } from '../store.jsx';
 import { Field, Spinner, StatusChip, NeedsConnection, confirmAsk, Modal, useFilePicker } from '../components/ui.jsx';
@@ -36,6 +36,7 @@ export default function ProjectEditor() {
   const [tab, setTab] = useState('scenes');
   const [save, setSave] = useState('saved');
   const [notice, setNotice] = useState(loc.state?.notice || null);
+  const [showSettings, setShowSettings] = useState(false);
   const dirty = useRef(false);
   const timer = useRef();
   const pRef = useRef();
@@ -92,23 +93,30 @@ export default function ProjectEditor() {
       <div className="page-head" style={{ marginBottom: 14 }}>
         <div className="row" style={{ flex: 1, minWidth: 260 }}>
           <Link to="/projects" className="btn ghost icon" aria-label="Volver"><ArrowLeft size={18} /></Link>
-          <input type="text" aria-label="Título" value={p.title} onChange={(e) => mutate((c) => ({ ...c, title: e.target.value }))} style={{ fontSize: 20, fontWeight: 700, background: 'transparent', border: '1px solid transparent', maxWidth: 480 }} />
+          <input type="text" aria-label="Título" value={p.title} onChange={(e) => mutate((c) => ({ ...c, title: e.target.value }))} style={{ fontSize: 22, fontWeight: 800, background: 'transparent', border: '1.5px solid transparent', maxWidth: 520 }} />
         </div>
         <div className="row">
           <span className="chip acc">{style?.name}</span><span className="chip">{p.settings.aspect}</span>
+          <button className="btn sm" onClick={() => setShowSettings(true)}><Cog size={14} /> Ajustes</button>
           <span className={`chip ${save === 'error' ? 'err' : save === 'saved' ? 'ok' : ''}`}>{save === 'saving' ? <><Spinner size={12} /> Guardando…</> : save === 'error' ? 'Error al guardar' : <><Check size={12} /> Guardado</>}</span>
         </div>
       </div>
       {notice && <div className="banner" style={{ marginBottom: 14 }}><Plug size={18} /><div style={{ flex: 1 }}>{notice}</div><button className="btn ghost icon sm" onClick={() => setNotice(null)}><X size={14} /></button></div>}
-      <div className="tabs" role="tablist">
-        {[['scenes', 'Escenas', Clapperboard], ['produce', 'Producción', Wand2], ['edit', 'Editor y línea de tiempo', Film], ['settings', 'Ajustes', Sparkles]].map(([k, l, I]) => (
-          <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? 'on' : ''} onClick={() => setTab(k)}><I size={16} />{l}</button>
+      <div className="pbar" role="tablist">
+        {[['scenes', 'Escenas', 'Revisa la historia'], ['produce', 'Generar', 'Imágenes, vídeo y voz'], ['edit', 'Montar y exportar', 'Línea de tiempo y MP4']].map(([k, l, d], i) => (
+          <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? 'on' : ''} onClick={() => setTab(k)}><i>{i + 1}</i><span>{l}<span className="small faint" style={{ display: 'block', fontWeight: 500 }}>{d}</span></span></button>
         ))}
       </div>
       {tab === 'scenes' && <ScenesTab {...ctx} setNotice={setNotice} />}
       {tab === 'produce' && <ProduceTab {...ctx} />}
       {tab === 'edit' && <EditTab {...ctx} />}
-      {tab === 'settings' && <SettingsTab {...ctx} />}
+      {tab !== 'edit' && (
+        <div className="nextbar">
+          <span className="small muted">{tab === 'scenes' ? 'Cuando las escenas te gusten, pasa a generarlas.' : 'Genera lo que falte (o sube tus propios archivos) y monta el vídeo.'}</span>
+          <button className="btn primary" onClick={() => { setTab(tab === 'scenes' ? 'produce' : 'edit'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{tab === 'scenes' ? 'Siguiente: Generar' : 'Siguiente: Montar'} <ArrowRight size={16} /></button>
+        </div>
+      )}
+      {showSettings && <Modal title="Ajustes del vídeo" wide onClose={() => setShowSettings(false)}><SettingsTab {...ctx} /></Modal>}
     </div>
   );
 }
@@ -185,19 +193,12 @@ function SceneForm({ s, up, chars, projectChars, options }) {
     <div className="scene-body">
       <div className="grid2">
         <Field label="Título de la escena"><input type="text" value={s.title} onChange={(e) => up({ title: e.target.value })} /></Field>
-        <div className="grid2">
-          <Field label="Duración (s)"><input type="number" min={1} max={60} value={s.duration} onChange={(e) => up({ duration: Math.max(1, Math.min(60, +e.target.value || 1)) })} /></Field>
-          <Field label="Movimiento de cámara"><select value={s.camera} onChange={(e) => up({ camera: e.target.value })}>{!options.cameras.includes(s.camera) && <option>{s.camera}</option>}{options.cameras.map((c) => <option key={c}>{c}</option>)}</select></Field>
-        </div>
+        <Field label="Duración (s)"><input type="number" min={1} max={60} value={s.duration} onChange={(e) => up({ duration: Math.max(1, Math.min(60, +e.target.value || 1)) })} /></Field>
       </div>
       <Field label="Descripción visual" hint="Qué se ve: lugar, acción, composición. Se envía al generador de imagen/vídeo."><textarea value={s.visual} onChange={(e) => up({ visual: e.target.value })} /></Field>
       <div>
         <div className="small muted" style={{ marginBottom: 6 }}>Personajes presentes</div>
         <div className="pills">{available.length === 0 && <span className="small faint">No hay personajes en tu biblioteca.</span>}{available.map((c) => <button type="button" key={c.id} className={`pill ${s.characters.includes(c.id) ? 'on' : ''}`} onClick={() => toggleChar(c.id)}>{c.name}</button>)}</div>
-      </div>
-      <div className="grid2">
-        <Field label="Expresiones faciales"><input type="text" value={s.expressions} onChange={(e) => up({ expressions: e.target.value })} placeholder="Sorpresa, ceño fruncido…" /></Field>
-        <Field label="Movimientos corporales"><input type="text" value={s.movements} onChange={(e) => up({ movements: e.target.value })} placeholder="Golpea la mesa, señala la cuenta…" /></Field>
       </div>
       <div className="col" style={{ gap: 8 }}>
         <div className="row between"><span className="small muted">Diálogos</span><button className="btn sm" onClick={() => up({ dialogues: [...s.dialogues, { id: uid('dlg'), characterId: s.characters[0] || null, speaker: '', text: '', emotion: 'Neutra' }] })}><Plus size={13} /> Diálogo</button></div>
@@ -212,7 +213,17 @@ function SceneForm({ s, up, chars, projectChars, options }) {
           </div>
         ))}
       </div>
+      <details className="more">
+        <summary>Más detalles <span className="faint" style={{ fontWeight: 500 }}>expresiones, movimientos, cámara, sonidos</span></summary>
+        <div className="col">
+      <div className="grid2">
+        <Field label="Expresiones faciales"><input type="text" value={s.expressions} onChange={(e) => up({ expressions: e.target.value })} placeholder="Sorpresa, ceño fruncido…" /></Field>
+        <Field label="Movimientos corporales"><input type="text" value={s.movements} onChange={(e) => up({ movements: e.target.value })} placeholder="Golpea la mesa, señala la cuenta…" /></Field>
+      </div>
+          <Field label="Movimiento de cámara"><select value={s.camera} onChange={(e) => up({ camera: e.target.value })}>{!options.cameras.includes(s.camera) && <option>{s.camera}</option>}{options.cameras.map((c) => <option key={c}>{c}</option>)}</select></Field>
       <Field label="Sonidos / efectos" hint="Ambiente y efectos (ej.: murmullo de cafetería, golpe de taza)."><input type="text" value={s.sounds} onChange={(e) => up({ sounds: e.target.value })} /></Field>
+        </div>
+      </details>
     </div>
   );
 }
@@ -244,11 +255,11 @@ function ProduceTab({ p, assets, chars, upScene, projJobs, reloadMedia, id, muta
 
   return (
     <div className="col">
-      <div className="grid2">
-        {['image', 'video', 'voice'].map((k) => !connected(k) && <NeedsConnection key={k} category={k} />)}
-      </div>
+      {['image', 'video', 'voice'].some((k) => !connected(k)) && (
+        <div className="banner"><Plug size={18} /><div><b>Falta conectar la IA</b> para generar {['image', 'video', 'voice'].filter((k) => !connected(k)).map((k) => ({ image: 'imágenes', video: 'vídeo', voice: 'voces' }[k])).join(', ')}. Mientras tanto puedes subir tus propios archivos. <Link to="/settings">Conectar →</Link></div></div>
+      )}
       <div className="card row between">
-        <div><b>Generar todo lo pendiente</b><div className="small muted">Estilo y personajes de referencia se aplican automáticamente. Cada escena puede regenerarse por separado.</div></div>
+        <div><b>Generar todo de una vez</b><div className="small muted">Aplica tu estilo y tus personajes. También puedes ir escena a escena.</div></div>
         <div className="row">
           <button className="btn" onClick={() => generateAll('image')}><ImageIcon size={15} /> Imágenes</button>
           <button className="btn" onClick={() => generateAll('video')}><Film size={15} /> Vídeos</button>
@@ -265,25 +276,27 @@ function ProduceTab({ p, assets, chars, upScene, projJobs, reloadMedia, id, muta
             <div className="thumb">{vid ? <video src={vid.url} muted controls preload="metadata" /> : img ? <img src={img.url} alt="" /> : <span className="small">Sin medios</span>}</div>
             <div className="col" style={{ gap: 10 }}>
               <div className="row between"><b>{i + 1}. {s.title}</b><div className="row">
-                <span className={`chip ${img ? 'ok' : ''}`}>Imagen {img ? '✓' : '—'}</span><span className={`chip ${vid ? 'ok' : ''}`}>Vídeo {vid ? '✓' : '—'}</span>
-                {vs.length > 0 && <span className={`chip ${doneV === vs.length ? 'ok' : ''}`}>Voz {doneV}/{vs.length}</span>}{s.media.sfxAssetId && <span className="chip ok">SFX ✓</span>}
+                
               </div></div>
               {noRefs && <div className="small" style={{ color: 'var(--warn)' }}>Los personajes de esta escena no tienen imágenes de referencia: la consistencia visual será baja.</div>}
               {projJobs.filter((j) => j.sceneId === s.id && ['queued', 'running'].includes(j.status)).map((j) => <div key={j.id}><div className="small muted">{j.kind} · {j.status === 'queued' ? 'en cola' : 'generando…'}</div><div className="progress"><i style={{ width: `${Math.max(8, j.progress)}%` }} /></div></div>)}
-              <div className="row">
-                <GenBtn on={connected('image')} busy={busy(s.id, 'image')} onClick={() => run('image', s.id)} icon={ImageIcon} cost={cost('image')}>{img ? 'Regenerar imagen' : 'Generar imagen'}</GenBtn>
-                <GenBtn on={connected('video')} busy={busy(s.id, 'video')} onClick={() => run('video', s.id)} icon={Film} cost={cost('video')}>{vid ? 'Regenerar vídeo' : 'Generar vídeo'}{img ? ' (desde imagen)' : ''}</GenBtn>
-                <GenBtn on={connected('voice')} busy={busy(s.id, 'voice')} disabled={!vs.length} onClick={async () => { for (const d of vs) await run('voice', s.id, { dialogueId: d.id }); }} icon={Mic} cost={cost('voice') * vs.length}>Voces</GenBtn>
-                <GenBtn on={connected('sfx')} busy={busy(s.id, 'sfx')} disabled={!s.sounds} onClick={() => run('sfx', s.id)} icon={Volume2} cost={cost('sfx')}>SFX</GenBtn>
-                {vid && vs.length > 0 && <GenBtn on={connected('lipsync')} busy={busy(s.id, 'lipsync')} onClick={() => run('lipsync', s.id)} icon={Sparkles} cost={boot.creditCost.lipsync}>Sincronía labial</GenBtn>}
+              <div className="stepper">
+                <GenBtn on={connected('image')} busy={busy(s.id, 'image')} done={!!img} onClick={() => run('image', s.id)} icon={ImageIcon} cost={cost('image')}>{img ? 'Imagen lista' : '1 · Imagen'}</GenBtn>
+                <GenBtn on={connected('video')} busy={busy(s.id, 'video')} done={!!vid} onClick={() => run('video', s.id)} icon={Film} cost={cost('video')}>{vid ? 'Vídeo listo' : '2 · Vídeo'}</GenBtn>
+                <GenBtn on={connected('voice')} busy={busy(s.id, 'voice')} disabled={!vs.length} done={vs.length > 0 && doneV === vs.length} onClick={async () => { for (const d of vs) await run('voice', s.id, { dialogueId: d.id }); }} icon={Mic} cost={cost('voice') * vs.length}>{vs.length && doneV === vs.length ? 'Voz lista' : '3 · Voz'}</GenBtn>
               </div>
-              <div className="row">
-                <UploadBtn label="Subir imagen" accept="image/png,image/jpeg,image/webp" onFile={(f) => upload(s.id, 'image', f)} />
-                <UploadBtn label="Subir vídeo" accept="video/mp4,video/webm,video/quicktime" onFile={(f) => upload(s.id, 'video', f)} />
-                <button className="btn sm ghost" onClick={() => setPickFor(s.id)}>Elegir de la biblioteca</button>
-                {img && <button className="btn sm ghost danger" onClick={() => setMedia(s.id, { imageAssetId: null })}>Quitar imagen</button>}
-                {vid && <button className="btn sm ghost danger" onClick={() => setMedia(s.id, { videoAssetId: null })}>Quitar vídeo</button>}
-              </div>
+              <details className="more" style={{ padding: '0 14px' }}>
+                <summary style={{ padding: '8px 0', fontSize: 13 }}>Más opciones <span className="faint" style={{ fontWeight: 500 }}>subir archivos, efectos, sincronía labial</span></summary>
+                <div className="row" style={{ paddingBottom: 12 }}>
+                  <UploadBtn label="Subir imagen" accept="image/png,image/jpeg,image/webp" onFile={(f) => upload(s.id, 'image', f)} />
+                  <UploadBtn label="Subir vídeo" accept="video/mp4,video/webm,video/quicktime" onFile={(f) => upload(s.id, 'video', f)} />
+                  <button className="btn sm ghost" onClick={() => setPickFor(s.id)}>Elegir de la biblioteca</button>
+                  <GenBtn on={connected('sfx')} busy={busy(s.id, 'sfx')} disabled={!s.sounds} onClick={() => run('sfx', s.id)} icon={Volume2} cost={cost('sfx')}>Efecto de sonido</GenBtn>
+                  {vid && vs.length > 0 && <GenBtn on={connected('lipsync')} busy={busy(s.id, 'lipsync')} onClick={() => run('lipsync', s.id)} icon={Sparkles} cost={boot.creditCost.lipsync}>Sincronía labial</GenBtn>}
+                  {img && <button className="btn sm ghost danger" onClick={() => setMedia(s.id, { imageAssetId: null })}>Quitar imagen</button>}
+                  {vid && <button className="btn sm ghost danger" onClick={() => setMedia(s.id, { videoAssetId: null })}>Quitar vídeo</button>}
+                </div>
+              </details>
             </div>
           </div>
         );
@@ -292,11 +305,11 @@ function ProduceTab({ p, assets, chars, upScene, projJobs, reloadMedia, id, muta
     </div>
   );
 }
-function GenBtn({ on, busy, onClick, icon: I, cost, children, disabled }) {
+function GenBtn({ on, busy, onClick, icon: I, cost, children, disabled, done }) {
   const { toast } = useApp();
   return (
-    <button className={`btn sm ${on ? '' : 'locked'}`} disabled={busy || disabled} onClick={on ? onClick : () => toast('Requiere conectar un proveedor en Configuración → Proveedores.', 'warn')} title={on ? `${cost} créditos` : 'Requiere conexión'}>
-      {busy ? <Spinner size={14} /> : on ? <I size={14} /> : <Plug size={14} />}{children}{on && <span className="faint">· {cost}</span>}
+    <button className={`btn sm ${on ? '' : 'locked'} ${done ? 'done' : ''}`} disabled={busy || disabled} onClick={on ? onClick : () => toast('Requiere conectar un proveedor en Configuración → Proveedores.', 'warn')} title={on ? `${cost} créditos` : 'Requiere conexión'}>
+      {busy ? <Spinner size={14} /> : done ? <Check size={14} /> : on ? <I size={14} /> : <Plug size={14} />}{children}{on && !done && <span className="faint">· {cost}</span>}
     </button>
   );
 }
@@ -477,7 +490,7 @@ function EditTab({ p, assets, upScene, mutate, id, reloadMedia, projJobs, flush 
               <Field label={`Volumen: ${Math.round((p.editor?.musicVolume ?? 0.25) * 100)}%`}><input type="range" min={0} max={1} step={0.05} value={p.editor?.musicVolume ?? 0.25} onChange={(e) => setEditor({ musicVolume: +e.target.value })} /></Field>
               <button className="btn sm danger" onClick={() => setMusic(null)}>Quitar música</button></> : <div className="small muted">Sin música. Sube un archivo o genérala con IA.</div>}
             <div className="row"><button className="btn sm" onClick={pickMusic}><Upload size={13} /> Subir audio</button>{musicInput}<button className="btn sm" onClick={() => setShowLib(true)}>Biblioteca</button></div>
-            <div className="row" style={{ flexWrap: 'nowrap' }}><input type="text" placeholder="Describe la música (ej.: jazz suave de cafetería)" value={musicPrompt} onChange={(e) => setMusicPrompt(e.target.value)} />
+            <div className="col" style={{ gap: 8 }}><input type="text" placeholder="Describe la música (ej.: jazz suave de cafetería)" value={musicPrompt} onChange={(e) => setMusicPrompt(e.target.value)} />
               <button className="btn sm" disabled={!connected('music') || !musicPrompt.trim()} onClick={() => generate('music', { projectId: id, prompt: musicPrompt, duration: Math.max(10, Math.round(total)) })}>{connected('music') ? <Sparkles size={13} /> : <Plug size={13} />} Generar</button></div>
             {!connected('music') && <div className="small" style={{ color: 'var(--warn)' }}>Generar música requiere un proveedor de música conectado.</div>}
           </div>

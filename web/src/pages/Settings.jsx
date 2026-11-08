@@ -10,9 +10,9 @@ export default function Settings() {
   const tab = sp.get('tab') || 'providers';
   return (
     <div className="page">
-      <PageHead title="Configuración" sub="Conecta proveedores de IA y gestiona tus créditos." />
+      <PageHead title="Ajustes" sub="Conecta tu IA y gestiona tus créditos." />
       <div className="tabs">
-        {[['providers', 'Proveedores de IA', Plug], ['credits', 'Créditos', Coins]].map(([k, l, I]) => <button key={k} className={tab === k ? 'on' : ''} onClick={() => setSp({ tab: k })}><I size={16} />{l}</button>)}
+        {[['providers', 'Conectar IA', Plug], ['credits', 'Créditos', Coins]].map(([k, l, I]) => <button key={k} className={tab === k ? 'on' : ''} onClick={() => setSp({ tab: k })}><I size={16} />{l}</button>)}
       </div>
       {tab === 'providers' ? <Providers /> : <Credits />}
     </div>
@@ -25,9 +25,13 @@ function Providers() {
   const setActive = async (cat, id) => { await api.put('/active-providers', { [cat]: id || null }); setAll(); };
   return (
     <div className="col">
-      <div className="banner info"><ShieldCheck size={18} /><div>Las claves se envían una sola vez al servidor, se guardan <b>cifradas (AES-256-GCM)</b> y nunca vuelven al navegador: solo verás los 4 últimos caracteres. Todas las llamadas a los proveedores se hacen desde el backend.</div></div>
-      <div className="card col">
-        <h3>Proveedor activo por función</h3>
+      <div className="banner info"><ShieldCheck size={18} /><div>Pega tu clave una vez. Se guarda <b>cifrada en tu servidor</b> y nunca vuelve al navegador.</div></div>
+      <div className="tile-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))' }}>
+        {boot.providers.map((p) => <Provider key={p.id} p={p} onChange={setAll} toast={toast} cats={boot.categories} />)}
+      </div>
+      <details className="more">
+        <summary>Avanzado: elegir qué proveedor usar en cada función</summary>
+        <div className="col">
         <div className="grid2">
           {boot.categories.map((c) => (
             <Field key={c.id} label={c.label}>
@@ -38,10 +42,8 @@ function Providers() {
             </Field>
           ))}
         </div>
-      </div>
-      <div className="tile-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))' }}>
-        {boot.providers.map((p) => <Provider key={p.id} p={p} onChange={setAll} toast={toast} cats={boot.categories} />)}
-      </div>
+        </div>
+      </details>
     </div>
   );
 }
@@ -67,11 +69,16 @@ function Provider({ p, onChange, toast, cats }) {
           <input type="password" autoComplete="off" placeholder={f.placeholder} value={vals[f.key] || ''} onChange={(e) => setVals({ ...vals, [f.key]: e.target.value })} />
         </Field>
       ))}
-      {['replicate', 'fal'].includes(p.id) || true ? p.categories.map((c) => (
-        <Field key={c} label={`Modelo · ${c}`} hint={p.defaultModels?.[c] ? `Por defecto: ${p.defaultModels[c]}` : undefined}>
-          <input type="text" placeholder={p.defaultModels?.[c] || ''} value={models[c] || ''} onChange={(e) => setModels({ ...models, [c]: e.target.value })} />
-        </Field>
-      )).filter((_, i) => p.categories[i] !== 'lipsync' || true) : null}
+      <details className="more" style={{ padding: '0 14px' }}>
+        <summary style={{ fontSize: 13, padding: '9px 0' }}>Modelos <span className="faint" style={{ fontWeight: 500 }}>opcional</span></summary>
+        <div className="col" style={{ paddingBottom: 12 }}>
+          {p.categories.map((c) => (
+            <Field key={c} label={label(c).split(' (')[0]} hint={p.defaultModels?.[c] ? `Por defecto: ${p.defaultModels[c]}` : undefined}>
+              <input type="text" placeholder={p.defaultModels?.[c] || ''} value={models[c] || ''} onChange={(e) => setModels({ ...models, [c]: e.target.value })} />
+            </Field>
+          ))}
+        </div>
+      </details>
       <div className="row">
         <button className="btn primary sm" disabled={busy} onClick={save}>{busy ? <Spinner size={14} /> : null} Guardar</button>
         <button className="btn sm" disabled={busy || !p.configured} onClick={test}>Probar conexión</button>

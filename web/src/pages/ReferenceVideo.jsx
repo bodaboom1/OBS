@@ -73,12 +73,12 @@ export default function ReferenceVideo() {
 
   return (
     <div className="page">
-      <PageHead title="Referencia a vídeo" sub="Sube imágenes de referencia, cítalas con @ en tu descripción y genera un vídeo guiado por ellas." />
+      <PageHead title="Vídeo con referencias" sub="Sube tus imágenes, cítalas con @ en la descripción y genera un vídeo guiado por ellas." />
       <NeedsConnection category="video">Elige OpenAI (Sora), fal.ai o Replicate y añade tu clave.</NeedsConnection>
       <div className="grid2" style={{ gridTemplateColumns: 'minmax(0,1.1fr) minmax(0,1fr)', alignItems: 'start', marginTop: 14 }}>
         <div className="col">
           <div className="card col">
-            <div className="row between"><h3>1 · Referencias</h3><span className="small faint">{refs.length + charIds.length}/8 · imágenes o vídeo</span></div>
+            <div className="row between"><h3>1 · Tus referencias</h3><span className="small faint">{refs.length + charIds.length}/8 · imágenes o vídeo</span></div>
             <Drop multiple accept="image/png,image/jpeg,image/webp,image/gif,video/mp4,video/webm,video/quicktime" onFiles={upload}><Upload size={22} /><div>Subir archivos (fotos de producto, personajes, ilustraciones…)</div></Drop>
             {refs.length > 0 && (
               <div className="slot-grid">
@@ -99,7 +99,7 @@ export default function ReferenceVideo() {
           </div>
 
           <div className="card col">
-            <div className="row between"><h3>2 · Describe la escena</h3>
+            <div className="row between"><h3>2 · Describe qué pasa</h3>
               <div className="row" style={{ position: 'relative' }}>
                 <button className="btn sm" disabled={!aliases.length} onClick={() => setMenu(!menu)}><AtSign size={14} /> Añadir referencia</button>
                 {menu && <div className="card col" style={{ position: 'absolute', right: 0, top: '110%', zIndex: 20, gap: 4, padding: 8, minWidth: 160 }}>{aliases.map((a) => <button key={a} className="btn ghost sm" style={{ justifyContent: 'flex-start' }} onClick={() => insert(a)}>@{a}</button>)}</div>}
@@ -114,7 +114,7 @@ export default function ReferenceVideo() {
 
         <div className="col">
           <div className="card col">
-            <h3>3 · Ajustes</h3>
+            <h3>3 · Formato</h3>
             <Field label="Modelo" hint={vprov ? `Proveedor: ${vprov.name}` : 'Sin proveedor de vídeo conectado'}>
               <select value={model} onChange={(e) => setModel(e.target.value)}>
                 <option value="">Por defecto{vprov?.models?.video || vprov?.defaultModels?.video ? ` (${vprov.models.video || vprov.defaultModels.video})` : ''}</option>

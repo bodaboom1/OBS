@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Image as ImageIcon, Film, Trash2, Upload, Wand2, Plug, Pencil } from 'lucide-react';
 import { api, form } from '../api.js';
 import { useApp } from '../store.jsx';
-import { Empty, PageHead, Modal, Field, Spinner, NeedsConnection, useFilePicker, confirmAsk } from '../components/ui.jsx';
+import { Empty, PageHead, LibraryTabs, Modal, Field, Spinner, NeedsConnection, useFilePicker, confirmAsk } from '../components/ui.jsx';
 
 export default function Library({ kind }) {
   const { boot, toast, connected, generate, onJobDone } = useApp();
@@ -26,14 +26,15 @@ export default function Library({ kind }) {
 
   return (
     <div className="page">
-      <PageHead title={isImg ? 'Biblioteca de imágenes' : 'Biblioteca de vídeos'} sub={isImg ? 'Imágenes subidas y generadas.' : 'Vídeos subidos, generados y exportados.'}>
-        <button className="btn" onClick={pick}><Upload size={16} /> Subir</button>{input}
+      <PageHead title="Biblioteca" sub={isImg ? 'Tus imágenes, subidas y generadas.' : 'Tus vídeos, incluidos los exportados.'}>
+        <button className="btn" onClick={pick}><Upload size={16} /> Subir archivos</button>{input}
         <button className={`btn primary ${connected(kind) ? '' : 'locked'}`} onClick={() => setGen(true)}>{connected(kind) ? <Wand2 size={16} /> : <Plug size={16} />} Generar con IA</button>
       </PageHead>
-      <div className="row" style={{ marginBottom: 14 }}>
-        {[['all', 'Todo'], ['up', 'Subidos'], ['gen', 'Generados / exportados']].map(([k, l]) => <button key={k} className={`pill ${filter === k ? 'on' : ''}`} onClick={() => setFilter(k)}>{l}</button>)}
+      <div className="row between" style={{ marginBottom: 6 }}><LibraryTabs /></div>
+      <div className="row" style={{ marginBottom: 18 }}>
+        {[['all', 'Todo'], ['up', 'Subidos'], ['gen', 'Creados con IA']].map(([k, l]) => <button key={k} className={`pill ${filter === k ? 'on' : ''}`} onClick={() => setFilter(k)}>{l}</button>)}
       </div>
-      {!list ? <Spinner /> : shown.length === 0 ? <Empty icon={isImg ? ImageIcon : Film} title="Todavía no hay nada aquí" text="Sube archivos o genera nuevos con IA cuando conectes un proveedor." /> : (
+      {!list ? <Spinner /> : shown.length === 0 ? <Empty icon={isImg ? ImageIcon : Film} title="Todavía no hay nada" text="Sube tus archivos o créalos con IA." /> : (
         <div className="media-grid">
           {shown.map((a) => (
             <div key={a.id} className="media">

@@ -109,10 +109,10 @@ export async function buildStoryboard({ userId, params, chars }) {
     const r = await viaLLM(userId, { chars, params: { ...params, text: text || 'Anima la imagen proporcionada.' }, style, provider });
     return { ...r, source: 'llm', provider: provider.id };
   }
-  const warning = 'No hay un modelo de lenguaje conectado: no se puede generar la historia con IA. Conecta uno en Configuración → Proveedores.';
+  const warning = 'Sin IA conectada no podemos escribir la historia por ti.';
   if (params.mode === 'script') return { scenes: parseScript(text, chars, count, total), source: 'script-parse', warning: 'Guion dividido localmente por formato (sin IA). Conecta un LLM para mejorar la división y el desarrollo.' };
   if (params.mode === 'prompt' || params.mode === 'image') {
     return { scenes: [linkCharacters({ title: 'Escena 1', visual: text || 'Animación de la imagen proporcionada', characters: chars.map((c) => c.name), duration: Math.min(15, total), camera: 'Zoom in lento' }, chars)], source: 'template', warning: params.mode === 'prompt' ? 'Prompt convertido en una única escena.' : 'Una escena con tu imagen inicial; edita la acción antes de generar.' };
   }
-  return { scenes: template(text, chars, count, total), source: 'template', warning: `${warning} Se ha creado una plantilla de 5 pasos editable.` };
+  return { scenes: template(text, chars, count, total), source: 'template', warning: `${warning} Hemos creado una plantilla de 5 pasos que puedes editar.` };
 }

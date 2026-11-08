@@ -31,7 +31,11 @@ export function projectDto(p, { scenes = true } = {}) {
   const rows = all('SELECT * FROM scenes WHERE project_id=? ORDER BY position', p.id);
   dto.sceneCount = rows.length;
   if (scenes) dto.scenes = rows.map(sceneDto);
-  else dto.thumbnailSceneMedia = rows.map((r) => parseJSON(r.media, {})).find((m) => m.imageAssetId)?.imageAssetId || null;
+  else {
+    const aid = rows.map((r) => parseJSON(r.media, {})).find((m) => m.imageAssetId)?.imageAssetId;
+    const a = aid && get('SELECT file FROM assets WHERE id=?', aid);
+    dto.thumbnail = a ? `/files/${a.file}` : null;
+  }
   return dto;
 }
 export const getProjectRow = (userId, id) => get('SELECT * FROM projects WHERE id=? AND user_id=?', id, userId);

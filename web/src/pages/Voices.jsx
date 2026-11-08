@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Mic, Wand2, Star, Plug, Play } from 'lucide-react';
 import { api } from '../api.js';
 import { useApp } from '../store.jsx';
-import { PageHead, Field, NeedsConnection, Spinner } from '../components/ui.jsx';
+import { PageHead, LibraryTabs, Field, NeedsConnection, Spinner } from '../components/ui.jsx';
 
 const GENDER = { male: 'Masculina', female: 'Femenina', neutral: 'Neutra' };
 
@@ -28,8 +28,9 @@ export default function Voices() {
 
   return (
     <div className="page">
-      <PageHead title="Generación de voces" sub="Elige una voz, ajusta tono, velocidad y emoción, y genera locuciones. En los proyectos, cada personaje usa su voz favorita." />
-      <NeedsConnection category="voice">El catálogo de voces y la locución las proporciona el proveedor (OpenAI o ElevenLabs).</NeedsConnection>
+      <PageHead title="Biblioteca" sub="Elige una voz, ajusta el tono y la emoción, y genera locuciones. En tus vídeos, cada personaje usa su voz favorita." />
+      <LibraryTabs />
+      <NeedsConnection category="voice">Las voces las ofrece OpenAI o ElevenLabs.</NeedsConnection>
       {!v ? <Spinner /> : (
         <div className="grid2" style={{ gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)', alignItems: 'start', marginTop: 14 }}>
           <div className="card col">

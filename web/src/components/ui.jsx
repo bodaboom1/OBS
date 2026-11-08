@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Plug, X, Loader2, Upload } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Plug, X, Loader2, Upload, Image as ImageIcon, Film, Mic } from 'lucide-react';
 import { useApp } from '../store.jsx';
 
 export function Modal({ title, onClose, children, wide }) {
@@ -53,9 +53,9 @@ export function NeedsConnection({ category, children }) {
     <div className="banner">
       <Plug size={18} />
       <div>
-        <b>Requiere conexión: {label}.</b>{' '}
-        {children || 'Hasta que conectes un proveedor, esta función no genera nada (no se simula).'}{' '}
-        <Link to="/settings" style={{ textDecoration: 'underline' }}>Conectar proveedor →</Link>
+        <b>Falta conectar la IA ({label.split(' (')[0].toLowerCase()}).</b>{' '}
+        {children || 'Sin conexión no se genera nada.'}{' '}
+        <Link to="/settings">Conectar →</Link>
       </div>
     </div>
   );
@@ -93,3 +93,9 @@ export function useFilePicker(onFiles, accept, multiple) {
 export const STATUS = { queued: ['En cola', 'chip'], running: ['Generando…', 'chip acc'], succeeded: ['Completado', 'chip ok'], failed: ['Fallido', 'chip err'], canceled: ['Cancelado', 'chip'] };
 export function StatusChip({ status }) { const [t, c] = STATUS[status] || [status, 'chip']; return <span className={c}>{t}</span>; }
 export const confirmAsk = (msg) => window.confirm(msg);
+
+export function LibraryTabs() {
+  const { pathname } = useLocation();
+  const items = [['/images', 'Imágenes', ImageIcon], ['/videos', 'Vídeos', Film], ['/voices', 'Voces', Mic]];
+  return <div className="tabs" role="tablist">{items.map(([to, l, I]) => <Link key={to} to={to} className={pathname === to ? 'on' : ''} role="tab" aria-selected={pathname === to}><I size={16} />{l}</Link>)}</div>;
+}

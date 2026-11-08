@@ -15,11 +15,11 @@ export default function HistoryPage() {
   const cancel = async (j) => { try { await api.post(`/jobs/${j.id}/cancel`); toast('Cancelado y créditos devueltos', 'ok'); loadJobs(); } catch (e) { toast(e.message, 'error'); } };
   return (
     <div className="page">
-      <PageHead title="Historial de creaciones" sub="Todas tus generaciones, con su estado, coste y resultado." />
+      <PageHead title="Actividad" sub="Todo lo que has generado, con su estado y coste." />
       <div className="row" style={{ marginBottom: 14 }}>
         {[['all', 'Todas'], ['running', 'En curso'], ['succeeded', 'Completadas'], ['failed', 'Fallidas']].map(([k, l]) => <button key={k} className={`pill ${filter === k ? 'on' : ''}`} onClick={() => setFilter(k)}>{l}</button>)}
       </div>
-      {shown.length === 0 ? <Empty icon={History} title="Sin actividad" text="Cuando generes imágenes, vídeos, voces o exportes un proyecto, aparecerán aquí." /> : (
+      {shown.length === 0 ? <Empty icon={History} title="Todavía no hay actividad" text="Aquí verás cada imagen, vídeo o voz que generes." /> : (
         <div className="card" style={{ padding: 0, overflowX: 'auto' }}>
           <table className="t">
             <thead><tr><th>Tipo</th><th>Detalle</th><th>Proveedor</th><th>Estado</th><th>Coste</th><th>Fecha</th><th /></tr></thead>
